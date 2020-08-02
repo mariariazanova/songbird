@@ -175,7 +175,7 @@ h3 {
     flex: 1 1;
     margin-top: 12px;
 }
-.playback-button {
+#playback-button {
     transition: .2s;
     width: 40px;
     height: 40px;
@@ -188,7 +188,7 @@ h3 {
     display: flex;
     align-items: center;
 }
-.playback-button svg {
+#playback-button svg {
     transition: .2s;
     width: 18px;
     height: 18px;

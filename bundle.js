@@ -30418,14 +30418,85 @@ var Question = function (_React$Component) {
     _inherits(Question, _React$Component);
 
     function Question() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, Question);
 
-        return _possibleConstructorReturn(this, (Question.__proto__ || Object.getPrototypeOf(Question)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Question.__proto__ || Object.getPrototypeOf(Question)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            audioDuration: '',
+            currentAudioTime: '',
+            left: 0
+
+            //componentDidUpdate(prevProps, prevState, snapshot) {
+            //    if (prevProps.src!==this.props.src) {
+            //      this.pause();
+            //      this.setState({
+            //        left: 0
+            //      })
+            //    }
+            //}
+
+        }, _this.startPlayMusic = function (EO) {
+            var audio = document.getElementById("audio");
+            console.log(audio);
+            if (audio.paused) {
+                audio.play();
+                _this.play();
+            } else {
+                audio.pause();
+                _this.pause();
+            }
+        }, _this.play = function () {
+
+            var playerButton = document.getElementById("playback-button");
+            playerButton.classList.add("playing");
+            playerButton.classList.remove("paused");
+
+            _this.interval = setInterval(function () {
+                var currentAudioTime = document.getElementById("audio").currentTime;
+                console.log(currentAudioTime);
+                _this.setState({
+                    currentAudioTime: currentAudioTime
+                });
+            }, 100);
+        }, _this.pause = function () {
+            var playerButton = document.getElementById("playback-button");
+            playerButton.classList.add('paused');
+            playerButton.classList.remove('playing');
+            clearInterval(_this.interval);
+        }, _this.setTime = function (time) {
+            var minutes = Math.floor(time / 60);
+            var seconds = Math.floor(time - Math.floor(time / 60) * 60);
+            var minutesVal = minutes;
+            var secondsVal = seconds;
+            if (minutes < 10) {
+                minutesVal = '0' + minutes;
+            }
+            if (seconds < 10) {
+                secondsVal = "0" + seconds;
+            }
+
+            return minutesVal + ':' + secondsVal;
+        }, _this.onLoadedMetadata = function () {
+            var audioDuration = document.getElementById("audio").duration;
+            _this.setState({
+                audioDuration: audioDuration,
+                currentAudioTime: 0
+            });
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(Question, [{
         key: 'render',
         value: function render() {
+
+            var durationSeconds = this.setTime(this.state.audioDuration);
 
             return (
                 //<React.Fragment> 
@@ -30454,13 +30525,15 @@ var Question = function (_React$Component) {
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'audio-player' },
-                                    _react2.default.createElement('audio', { src: this.props.sound[this.props.clrBtn][this.props.rand] }),
+                                    _react2.default.createElement('audio', { id: 'audio',
+                                        src: this.props.sound[this.props.clrBtn][this.props.rand],
+                                        onLoadedMetadata: this.onLoadedMetadata }),
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'controls' },
                                         _react2.default.createElement(
                                             'div',
-                                            { className: 'playback-button' },
+                                            { id: 'playback-button', className: 'playback-button paused', onClick: this.startPlayMusic },
                                             _react2.default.createElement(
                                                 'svg',
                                                 { className: '', viewBox: '-200 0 1200 1000' },
@@ -30478,7 +30551,7 @@ var Question = function (_React$Component) {
                                                 _react2.default.createElement(
                                                     'div',
                                                     null,
-                                                    '00:00'
+                                                    this.setTime(this.state.currentAudioTime)
                                                 ),
                                                 _react2.default.createElement('div', null)
                                             )
