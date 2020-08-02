@@ -25,7 +25,7 @@ class Quiz extends React.Component {
         clrBtn: 0,
         sound: Info.Sound,
         description: null,
-        rand: Math.round(0 - 0.5 + Math.random() * (4 - 0 + 1)),
+        rand: Math.floor(Math.random() * (5 - 0 + 1))+0,
         image: Info.Image,
         variableBirds: Info.VariableBirds,
 
@@ -47,7 +47,11 @@ class Quiz extends React.Component {
                           rand={this.state.rand}
                           variableBirds= {this.state.variableBirds}  
                 />
-               {/* <Answers /> */}
+                <Answers variableBirds= {this.state.variableBirds} 
+                         descAnswer={this.handleDesc} 
+                         clrBtn={this.state.clrBtn}
+                         rand={this.state.rand}
+                />
                {/* <Description /> */}
             </React.Fragment>
         )  

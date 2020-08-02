@@ -1,0 +1,31 @@
+.description-block {
+    display: flex;
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+.description-block-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    position: relative;
+    padding: 1rem;
+    border: 1px solid #444;
+    width: 100%;
+    background-color: #303030;
+    background-clip: border-box;
+    border-radius: 0.25rem;
+}
+.task-instruction {
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+}
+
+.task-instruction span {
+    display: block;
+}

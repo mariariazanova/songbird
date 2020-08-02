@@ -14,7 +14,7 @@ class Header extends React.Component {
   
     render() {
     
-      const typeBirdslist = this.props.typeBirds.map((item, index) => (
+      const typeBirdsList = this.props.typeBirds.map((item, index) => (
           <li key={index} className={
                         (index === this.props.clrBtn)
                         ? "page-item active"
@@ -39,7 +39,7 @@ class Header extends React.Component {
             </h5> 
           </div>
           <ul className="pagination">
-             {typeBirdslist}           
+             {typeBirdsList}           
           </ul>
           </div>
         //</React.Fragment>             
