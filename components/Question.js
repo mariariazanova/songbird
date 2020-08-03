@@ -14,9 +14,9 @@ class Question extends React.Component {
       
     };
     state = {
-        audioDuration: '',
-        currentAudioTime: '',
-        left: 0
+        audioDuration: '',          //длительность аудио
+        currentAudioTime: '',       //текущее время воспроизведение  
+        distance: 0                     //расстояние, на котором расположен кружочек в панели управлении от начала
 
     }
 
@@ -24,7 +24,7 @@ class Question extends React.Component {
     //    if (prevProps.src!==this.props.src) {
     //      this.pause();
     //      this.setState({
-    //        left: 0
+    //        distance: 0
     //      })
     //    }
     //}
@@ -52,9 +52,11 @@ class Question extends React.Component {
             console.log(currentAudioTime);
             this.setState({
                 currentAudioTime: currentAudioTime,
-            })  
-                
-                
+                distance: currentAudioTime / this.state.audioDuration * 100
+            });  
+            if(currentAudioTime === this.state.audioDuration){
+                this.pause();
+            }    
             }, 100);
              
         
@@ -91,7 +93,7 @@ class Question extends React.Component {
     
     render() {
     
-        let durationSeconds = this.setTime(this.state.audioDuration);
+     let dist = this.state.distance + '%';
                
       return (
         //<React.Fragment> 
@@ -110,17 +112,18 @@ class Question extends React.Component {
                        
                         <div className="controls">
                             <div id="playback-button" className="playback-button paused" onClick={this.startPlayMusic}>
-                                <svg className="" viewBox="-200 0 1200 1000">
+                            <div></div>
+                            {/*   <svg className="" viewBox="-200 0 1200 1000">
                                     <path fill="#00bc8c" d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z">
                                     </path>
-                                </svg>
+      </svg>*/}
                             </div>
                             <div className="timebar">
-                                <div className="timebar-bar"></div>
-                                <div className="timebar-circle"></div>
+                                <div className="timebar-bar" style={{backgroundImage: 'linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140)'+dist+', rgb(115, 115, 115)'+dist+', rgb(115, 115, 115) 100%)'}}></div>
+                                <div className="timebar-circle" style={{left: dist}}></div>
                                 <div className="timebar-time-info">
                                     <div>{this.setTime(this.state.currentAudioTime)}</div>
-                                    <div></div>
+                                    <div>{this.setTime(this.state.audioDuration)}</div>
                                 </div>
                             </div>
                         </div>    

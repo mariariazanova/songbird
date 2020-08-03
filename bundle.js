@@ -30429,15 +30429,15 @@ var Question = function (_React$Component) {
         }
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Question.__proto__ || Object.getPrototypeOf(Question)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            audioDuration: '',
-            currentAudioTime: '',
-            left: 0
+            audioDuration: '', //длительность аудио
+            currentAudioTime: '', //текущее время воспроизведение  
+            distance: 0 //расстояние, на котором расположен кружочек в панели управлении от начала
 
             //componentDidUpdate(prevProps, prevState, snapshot) {
             //    if (prevProps.src!==this.props.src) {
             //      this.pause();
             //      this.setState({
-            //        left: 0
+            //        distance: 0
             //      })
             //    }
             //}
@@ -30462,8 +30462,12 @@ var Question = function (_React$Component) {
                 var currentAudioTime = document.getElementById("audio").currentTime;
                 console.log(currentAudioTime);
                 _this.setState({
-                    currentAudioTime: currentAudioTime
+                    currentAudioTime: currentAudioTime,
+                    distance: currentAudioTime / _this.state.audioDuration * 100
                 });
+                if (currentAudioTime === _this.state.audioDuration) {
+                    _this.pause();
+                }
             }, 100);
         }, _this.pause = function () {
             var playerButton = document.getElementById("playback-button");
@@ -30496,7 +30500,7 @@ var Question = function (_React$Component) {
         key: 'render',
         value: function render() {
 
-            var durationSeconds = this.setTime(this.state.audioDuration);
+            var dist = this.state.distance + '%';
 
             return (
                 //<React.Fragment> 
@@ -30534,17 +30538,13 @@ var Question = function (_React$Component) {
                                         _react2.default.createElement(
                                             'div',
                                             { id: 'playback-button', className: 'playback-button paused', onClick: this.startPlayMusic },
-                                            _react2.default.createElement(
-                                                'svg',
-                                                { className: '', viewBox: '-200 0 1200 1000' },
-                                                _react2.default.createElement('path', { fill: '#00bc8c', d: 'M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z' })
-                                            )
+                                            _react2.default.createElement('div', null)
                                         ),
                                         _react2.default.createElement(
                                             'div',
                                             { className: 'timebar' },
-                                            _react2.default.createElement('div', { className: 'timebar-bar' }),
-                                            _react2.default.createElement('div', { className: 'timebar-circle' }),
+                                            _react2.default.createElement('div', { className: 'timebar-bar', style: { backgroundImage: 'linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140)' + dist + ', rgb(115, 115, 115)' + dist + ', rgb(115, 115, 115) 100%)' } }),
+                                            _react2.default.createElement('div', { className: 'timebar-circle', style: { left: dist } }),
                                             _react2.default.createElement(
                                                 'div',
                                                 { className: 'timebar-time-info' },
@@ -30553,7 +30553,11 @@ var Question = function (_React$Component) {
                                                     null,
                                                     this.setTime(this.state.currentAudioTime)
                                                 ),
-                                                _react2.default.createElement('div', null)
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    null,
+                                                    this.setTime(this.state.audioDuration)
+                                                )
                                             )
                                         )
                                     )

@@ -139,6 +139,7 @@ li.page-item {
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
+    margin-top: 0
 
 }
 .question-panel-item {
@@ -197,9 +198,22 @@ h3 {
     vertical-align: middle;
     cursor: pointer;
 }
+
+.playing div{
+    width: 12px;
+    height: 14px;
+    border-right: 4px solid #00bc8c;
+    border-left: 4px solid #00bc8c;
+}
+
+.paused div{
+    border-width: 8px 0 8px 12px;
+    border-color: transparent transparent transparent #00bc8c;
+    border-style: solid;
+}
 .timebar .timebar-bar {
     height: 4px;
-    background: linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140) 0%, rgb(115, 115, 115) 0%, rgb(115, 115, 115) 100%);
+   
 }
 
 .timebar .timebar-circle {
