@@ -326,6 +326,16 @@ t.answers-list-item+.answers-list-item {
 .answers-list .answers-list-item:hover {
     background-color: #444;
 }
+
+.answers-list .answers-list-item .red {
+    background-color: red !important;
+}
+.answers-list .answers-list-item .green {
+    background-color: green !important;
+}
+
+
+
 .answers-list-item a {
     text-decoration: none;
     color: white;

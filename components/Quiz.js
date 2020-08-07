@@ -10,6 +10,8 @@ import Description from './Description';
 
 import Info from '../InfoBirds.json';
 import publicInfo from '../publicInfo.json';
+import CorrectAnswer from '../audio/correct_answer.mp3';
+import IncorrectAnswer from '../audio/incorrect_answer.mp3';
 
 
 class Quiz extends React.Component {
@@ -53,6 +55,9 @@ class Quiz extends React.Component {
                          rand={this.state.rand}
                 />
                {/* <Description /> */}
+               {/*<NextButton onNextClick={this.onNextClick} guessed={guessed} />*/ }
+                <audio id="correct_answer" src={CorrectAnswer} />
+                <audio id="incorrect_answer" src={IncorrectAnswer} /> 
             </React.Fragment>
         )  
 

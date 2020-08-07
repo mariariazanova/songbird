@@ -49,7 +49,7 @@ class Question extends React.Component {
         
         this.interval = setInterval(() => {
             var currentAudioTime = document.getElementById("audio").currentTime;
-            console.log(currentAudioTime);
+            //console.log(currentAudioTime);
             this.setState({
                 currentAudioTime: currentAudioTime,
                 distance: currentAudioTime / this.state.audioDuration * 100
@@ -90,7 +90,31 @@ class Question extends React.Component {
           currentAudioTime: 0
         });
     }
-    
+    //перемотка аудио - пока не работает
+    /*audioChangeTime = (EO) => { 
+        EO = EO || window.event;
+
+        var progressBar = document.getElementById("timebar-bar");
+        console.log("EO.pageX=" + EO.pageX);
+        console.log("progressBar.offsetLeft=" + progressBar.offsetLeft);
+        console.log("EO.target.offsetLeft=" + EO.target.offsetLeft);
+        console.log("progressBar.pageX=" + progressBar.pageX);
+        //console.log("progressBar.getBoundingClientRect.left=" + progressBar.getBoundingClientRect.left);
+        var mouseX = Math.floor(EO.pageX - progressBar.offsetLeft);
+        //var mouseX = Math.floor(EO.pageX - EO.target.offsetLeft);
+        //var mouseX = Math.floor(EO.pageX - EO.target.getBoundingClientRect.left+window.pageXOffset);
+        console.log("mouseX=" + mouseX);
+
+        var progress = mouseX / (progressBar.offsetWidth / 100);
+        console.log("progressBar.offsetWidth=" + progressBar.offsetWidth);
+        console.log("progress= " + progress);
+        this.setState({
+            currentAudioTime : this.state.audioDuration * (progress / 100),
+            distance: progress 
+        })    
+     
+    }    
+    */
     render() {
     
      let dist = this.state.distance + '%';
@@ -105,7 +129,7 @@ class Question extends React.Component {
                     <h3>******</h3>
                 </li>
                 <li className="question-panel-item">
-                    <div className="audio-player">
+                    <div className="audio-player" id="audio-player" >
                         <audio id="audio"
                                src={this.props.sound[this.props.clrBtn][this.props.rand]}
                                onLoadedMetadata={this.onLoadedMetadata} />
@@ -118,9 +142,10 @@ class Question extends React.Component {
                                     </path>
       </svg>*/}
                             </div>
-                            <div className="timebar">
-                                <div className="timebar-bar" style={{backgroundImage: 'linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140)'+dist+', rgb(115, 115, 115)'+dist+', rgb(115, 115, 115) 100%)'}}></div>
-                                <div className="timebar-circle" style={{left: dist}}></div>
+                            <div className="timebar" id="timebar" >
+                                <div className="timebar-bar" style={{backgroundImage: 'linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140)'+dist+', rgb(115, 115, 115)'+dist+', rgb(115, 115, 115) 100%)'}}
+                                     id="timebar-bar" /*onClick={this.audioChangeTime}*/></div>
+                                <div className="timebar-circle" id="timebar-circle" style={{left: dist}} ></div>
                                 <div className="timebar-time-info">
                                     <div>{this.setTime(this.state.currentAudioTime)}</div>
                                     <div>{this.setTime(this.state.audioDuration)}</div>

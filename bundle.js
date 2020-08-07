@@ -29305,6 +29305,14 @@ var _publicInfo = __webpack_require__(37);
 
 var _publicInfo2 = _interopRequireDefault(_publicInfo);
 
+var _correct_answer = __webpack_require__(38);
+
+var _correct_answer2 = _interopRequireDefault(_correct_answer);
+
+var _incorrect_answer = __webpack_require__(39);
+
+var _incorrect_answer2 = _interopRequireDefault(_incorrect_answer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29361,7 +29369,9 @@ var Quiz = function (_React$Component) {
                     descAnswer: this.handleDesc,
                     clrBtn: this.state.clrBtn,
                     rand: this.state.rand
-                })
+                }),
+                _react2.default.createElement('audio', { id: 'correct_answer', src: _correct_answer2.default }),
+                _react2.default.createElement('audio', { id: 'incorrect_answer', src: _incorrect_answer2.default })
             );
         }
     }]);
@@ -30460,7 +30470,7 @@ var Question = function (_React$Component) {
 
             _this.interval = setInterval(function () {
                 var currentAudioTime = document.getElementById("audio").currentTime;
-                console.log(currentAudioTime);
+                //console.log(currentAudioTime);
                 _this.setState({
                     currentAudioTime: currentAudioTime,
                     distance: currentAudioTime / _this.state.audioDuration * 100
@@ -30498,6 +30508,30 @@ var Question = function (_React$Component) {
 
     _createClass(Question, [{
         key: 'render',
+
+        //перемотка аудио - пока не работает
+        /*audioChangeTime = (EO) => { 
+            EO = EO || window.event;
+              var progressBar = document.getElementById("timebar-bar");
+            console.log("EO.pageX=" + EO.pageX);
+            console.log("progressBar.offsetLeft=" + progressBar.offsetLeft);
+            console.log("EO.target.offsetLeft=" + EO.target.offsetLeft);
+            console.log("progressBar.pageX=" + progressBar.pageX);
+            //console.log("progressBar.getBoundingClientRect.left=" + progressBar.getBoundingClientRect.left);
+            var mouseX = Math.floor(EO.pageX - progressBar.offsetLeft);
+            //var mouseX = Math.floor(EO.pageX - EO.target.offsetLeft);
+            //var mouseX = Math.floor(EO.pageX - EO.target.getBoundingClientRect.left+window.pageXOffset);
+            console.log("mouseX=" + mouseX);
+              var progress = mouseX / (progressBar.offsetWidth / 100);
+            console.log("progressBar.offsetWidth=" + progressBar.offsetWidth);
+            console.log("progress= " + progress);
+            this.setState({
+                currentAudioTime : this.state.audioDuration * (progress / 100),
+                distance: progress 
+            })    
+         
+        }    
+        */
         value: function render() {
 
             var dist = this.state.distance + '%';
@@ -30528,7 +30562,7 @@ var Question = function (_React$Component) {
                                 { className: 'question-panel-item' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'audio-player' },
+                                    { className: 'audio-player', id: 'audio-player' },
                                     _react2.default.createElement('audio', { id: 'audio',
                                         src: this.props.sound[this.props.clrBtn][this.props.rand],
                                         onLoadedMetadata: this.onLoadedMetadata }),
@@ -30542,9 +30576,10 @@ var Question = function (_React$Component) {
                                         ),
                                         _react2.default.createElement(
                                             'div',
-                                            { className: 'timebar' },
-                                            _react2.default.createElement('div', { className: 'timebar-bar', style: { backgroundImage: 'linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140)' + dist + ', rgb(115, 115, 115)' + dist + ', rgb(115, 115, 115) 100%)' } }),
-                                            _react2.default.createElement('div', { className: 'timebar-circle', style: { left: dist } }),
+                                            { className: 'timebar', id: 'timebar' },
+                                            _react2.default.createElement('div', { className: 'timebar-bar', style: { backgroundImage: 'linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140)' + dist + ', rgb(115, 115, 115)' + dist + ', rgb(115, 115, 115) 100%)' },
+                                                id: 'timebar-bar' /*onClick={this.audioChangeTime}*/ }),
+                                            _react2.default.createElement('div', { className: 'timebar-circle', id: 'timebar-circle', style: { left: dist } }),
                                             _react2.default.createElement(
                                                 'div',
                                                 { className: 'timebar-time-info' },
@@ -30631,25 +30666,51 @@ var Answers = function (_React$Component) {
   _inherits(Answers, _React$Component);
 
   function Answers() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, Answers);
 
-    return _possibleConstructorReturn(this, (Answers.__proto__ || Object.getPrototypeOf(Answers)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Answers.__proto__ || Object.getPrototypeOf(Answers)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      descAnswer: _this.props.descAnswer,
+      rand: _this.props.rand
+    }, _this.onItemClick = function (EO) {
+      console.log(EO.target);
+      console.log(EO.target.id);
+      //this.setState({ descAnswer: Number(EO.target.id) //[this.props.clrBtn][this.props.rand]
+      // });
+
+      Number(EO.target.id) == _this.props.rand ? (EO.target.firstChild.className = "li-btn green", document.getElementById("correct_answer").play()) : (EO.target.firstChild.className = "li-btn red", document.getElementById("incorrect_answer").play());
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Answers, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
 
       var answersList = this.props.variableBirds[this.props.clrBtn].map(function (item, index) {
         return _react2.default.createElement(
           'li',
-          { key: index, className: 'answers-list-item' },
-          _react2.default.createElement('span', { className: 'li-btn' }),
-          _react2.default.createElement(
-            'a',
-            { href: '/#', className: '' },
-            item
-          )
+          { key: index, id: index, className: 'answers-list-item', onClick: _this2.onItemClick },
+          _react2.default.createElement('span', { className: 'li-btn'
+            //{
+            //(!this.state.descAnswer)
+            //? "li-btn"
+            //: (this.state.descAnswer && (this.state.descAnswer == this.props.rand) )
+            //  ? "li-btn green"
+            //  : "li-btn red"
+
+
+            //}
+
+          }),
+          item
         );
       });
 
@@ -30683,7 +30744,13 @@ var Answers = function (_React$Component) {
   return Answers;
 }(_react2.default.Component);
 
-Answers.propTypes = {};
+Answers.propTypes = {
+  variableBirds: _propTypes2.default.array.isRequired,
+  descAnswer: _propTypes2.default.number,
+  clrBtn: _propTypes2.default.number.isRequired,
+  rand: _propTypes2.default.number.isRequired
+
+};
 exports.default = Answers;
 
 /***/ }),
@@ -30709,6 +30776,22 @@ module.exports = {"Sound":[["https://www.xeno-canto.org/sounds/uploaded/XIQVMQVU
 /***/ (function(module, exports) {
 
 module.exports = {"TypeBirds":["Разминка","Воробьиные","Лесные птицы","Певчие птицы","Хищные птицы","Морские птицы"]}
+
+/***/ }),
+/* 38 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "static/media/correct_answer.0444b817.mp3");
+
+/***/ }),
+/* 39 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "static/media/incorrect_answer.b1392219.mp3");
 
 /***/ })
 /******/ ]);
