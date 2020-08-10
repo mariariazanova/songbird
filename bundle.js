@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -261,15 +261,41 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(10);
-} else {
   module.exports = __webpack_require__(11);
+} else {
+  module.exports = __webpack_require__(12);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var ReactIs = __webpack_require__(7);
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(25)(ReactIs.isElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(26)();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -364,32 +390,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var ReactIs = __webpack_require__(7);
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(24)(ReactIs.isElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(25)();
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 4 */
@@ -528,9 +528,9 @@ module.exports = ReactPropTypesSecret;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(14);
-} else {
   module.exports = __webpack_require__(15);
+} else {
+  module.exports = __webpack_require__(16);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -543,9 +543,9 @@ if (process.env.NODE_ENV === 'production') {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(22);
-} else {
   module.exports = __webpack_require__(23);
+} else {
+  module.exports = __webpack_require__(24);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -558,7 +558,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -567,11 +567,245 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+__webpack_require__(31);
+
+var _bird = __webpack_require__(32);
+
+var _bird2 = _interopRequireDefault(_bird);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var svg_playback = [];
+
+var Question = function (_React$Component) {
+    _inherits(Question, _React$Component);
+
+    function Question() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, Question);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Question.__proto__ || Object.getPrototypeOf(Question)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            audioDuration: '', //длительность аудио
+            currentAudioTime: '', //текущее время воспроизведение  
+            distance: 0 //расстояние, на котором расположен кружочек в панели управлении от начала
+
+            //componentDidUpdate(prevProps, prevState, snapshot) {
+            //    if (prevProps.src!==this.props.src) {
+            //      this.pause();
+            //      this.setState({
+            //        distance: 0
+            //      })
+            //    }
+            //}
+
+        }, _this.startPlayMusic = function (EO) {
+            var audio = document.getElementById("audio");
+            console.log(audio);
+            if (audio.paused) {
+                audio.play();
+                _this.play();
+            } else {
+                audio.pause();
+                _this.pause();
+            }
+        }, _this.play = function () {
+
+            var playerButton = document.getElementById("playback-button");
+            playerButton.classList.add("playing");
+            playerButton.classList.remove("paused");
+
+            _this.interval = setInterval(function () {
+                var currentAudioTime = document.getElementById("audio").currentTime;
+                //console.log(currentAudioTime);
+                _this.setState({
+                    currentAudioTime: currentAudioTime,
+                    distance: currentAudioTime / _this.state.audioDuration * 100
+                });
+                if (currentAudioTime === _this.state.audioDuration) {
+                    _this.pause();
+                }
+            }, 100);
+        }, _this.pause = function () {
+            var playerButton = document.getElementById("playback-button");
+            playerButton.classList.add('paused');
+            playerButton.classList.remove('playing');
+            clearInterval(_this.interval);
+        }, _this.setTime = function (time) {
+            var minutes = Math.floor(time / 60);
+            var seconds = Math.floor(time - Math.floor(time / 60) * 60);
+            var minutesVal = minutes;
+            var secondsVal = seconds;
+            if (minutes < 10) {
+                minutesVal = '0' + minutes;
+            }
+            if (seconds < 10) {
+                secondsVal = "0" + seconds;
+            }
+
+            return minutesVal + ':' + secondsVal;
+        }, _this.onLoadedMetadata = function () {
+            var audioDuration = document.getElementById("audio").duration;
+            _this.setState({
+                audioDuration: audioDuration,
+                currentAudioTime: 0
+            });
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(Question, [{
+        key: 'render',
+
+        //перемотка аудио - пока не работает
+        /*audioChangeTime = (EO) => { 
+            EO = EO || window.event;
+              var progressBar = document.getElementById("timebar-bar");
+            console.log("EO.pageX=" + EO.pageX);
+            console.log("progressBar.offsetLeft=" + progressBar.offsetLeft);
+            console.log("EO.target.offsetLeft=" + EO.target.offsetLeft);
+            console.log("progressBar.pageX=" + progressBar.pageX);
+            //console.log("progressBar.getBoundingClientRect.left=" + progressBar.getBoundingClientRect.left);
+            var mouseX = Math.floor(EO.pageX - progressBar.offsetLeft);
+            //var mouseX = Math.floor(EO.pageX - EO.target.offsetLeft);
+            //var mouseX = Math.floor(EO.pageX - EO.target.getBoundingClientRect.left+window.pageXOffset);
+            console.log("mouseX=" + mouseX);
+              var progress = mouseX / (progressBar.offsetWidth / 100);
+            console.log("progressBar.offsetWidth=" + progressBar.offsetWidth);
+            console.log("progress= " + progress);
+            this.setState({
+                currentAudioTime : this.state.audioDuration * (progress / 100),
+                distance: progress 
+            })    
+         
+        }    
+        */
+        value: function render() {
+
+            var dist = this.state.distance + '%';
+
+            return (
+                //<React.Fragment> 
+                _react2.default.createElement(
+                    'div',
+                    { className: 'question-panel' },
+                    _react2.default.createElement('img', { src: this.props.guessed ? this.props.image[this.props.clrBtn][this.props.rand] : _bird2.default, className: 'bird-image' }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: '' },
+                        _react2.default.createElement(
+                            'ul',
+                            { className: 'question-panel-aside' },
+                            _react2.default.createElement(
+                                'li',
+                                { className: 'question-panel-item' },
+                                this.props.guessed ? _react2.default.createElement(
+                                    'h3',
+                                    null,
+                                    this.props.variableBirds[this.props.clrBtn][this.props.rand]
+                                ) : _react2.default.createElement(
+                                    'h3',
+                                    null,
+                                    '******'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'li',
+                                { className: 'question-panel-item' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'audio-player', id: 'audio-player' },
+                                    _react2.default.createElement('audio', { id: 'audio',
+                                        src: this.props.sound[this.props.clrBtn][this.props.rand],
+                                        onLoadedMetadata: this.onLoadedMetadata }),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'controls' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { id: 'playback-button', className: 'playback-button paused', onClick: this.startPlayMusic },
+                                            _react2.default.createElement('div', null)
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'timebar', id: 'timebar' },
+                                            _react2.default.createElement('div', { className: 'timebar-bar', style: { backgroundImage: 'linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140)' + dist + ', rgb(115, 115, 115)' + dist + ', rgb(115, 115, 115) 100%)' },
+                                                id: 'timebar-bar' /*onClick={this.audioChangeTime}*/ }),
+                                            _react2.default.createElement('div', { className: 'timebar-circle', id: 'timebar-circle', style: { left: dist } }),
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'timebar-time-info' },
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    null,
+                                                    this.setTime(this.state.currentAudioTime)
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    null,
+                                                    this.setTime(this.state.audioDuration)
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+                //</React.Fragment>             
+
+            );
+        }
+    }]);
+
+    return Question;
+}(_react2.default.Component);
+
+Question.propTypes = {};
+exports.default = Question;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
 __webpack_require__(34);
+
+var _Question = __webpack_require__(8);
+
+var _Question2 = _interopRequireDefault(_Question);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -582,53 +816,191 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Description = function (_React$Component) {
-  _inherits(Description, _React$Component);
+    _inherits(Description, _React$Component);
 
-  function Description() {
-    _classCallCheck(this, Description);
+    function Description() {
+        var _ref;
 
-    return _possibleConstructorReturn(this, (Description.__proto__ || Object.getPrototypeOf(Description)).apply(this, arguments));
-  }
+        var _temp, _this, _ret;
 
-  _createClass(Description, [{
-    key: 'render',
-    value: function render() {
+        _classCallCheck(this, Description);
 
-      return _react2.default.createElement(
-        'div',
-        { className: 'description-block' },
-        _react2.default.createElement(
-          'div',
-          { className: 'description-block-card' },
-          _react2.default.createElement(
-            'p',
-            { className: 'task-instruction' },
-            _react2.default.createElement(
-              'span',
-              null,
-              '\u041F\u043E\u0441\u043B\u0443\u0448\u0430\u0439\u0442\u0435 \u043F\u043B\u0435\u0435\u0440.'
-            ),
-            _react2.default.createElement(
-              'span',
-              null,
-              '\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043F\u0442\u0438\u0446\u0443 \u0438\u0437 \u0441\u043F\u0438\u0441\u043A\u0430.'
-            )
-          ),
-          _react2.default.createElement('div', null),
-          _react2.default.createElement('span', null)
-        )
-      );
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Description.__proto__ || Object.getPrototypeOf(Description)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            audioDuration: '', //длительность аудио
+            currentAudioTime: '', //текущее время воспроизведение  
+            distance: 0 //расстояние, на котором расположен кружочек в панели управлении от начала
+
+        }, _this.onLoadedMetadata = function () {
+            var audioDuration = document.getElementById("audio2").duration;
+            _this.setState({
+                audioDuration: audioDuration,
+                currentAudioTime: 0
+            });
+        }, _this.startPlayMusic = function (EO) {
+            var audio = document.getElementById("audio2");
+            console.log(audio);
+            if (audio.paused) {
+                audio.play();
+                _this.play();
+            } else {
+                audio.pause();
+                _this.pause();
+            }
+        }, _this.play = function () {
+
+            var playerButton = document.getElementById("playback-button2");
+            playerButton.classList.add("playing");
+            playerButton.classList.remove("paused");
+
+            _this.interval = setInterval(function () {
+                var currentAudioTime = document.getElementById("audio2").currentTime;
+                //console.log(currentAudioTime);
+                _this.setState({
+                    currentAudioTime: currentAudioTime,
+                    distance: currentAudioTime / _this.state.audioDuration * 100
+                });
+                if (currentAudioTime === _this.state.audioDuration) {
+                    _this.pause();
+                }
+            }, 100);
+        }, _this.pause = function () {
+            var playerButton = document.getElementById("playback-button2");
+            playerButton.classList.add('paused');
+            playerButton.classList.remove('playing');
+            clearInterval(_this.interval);
+        }, _this.setTime = function (time) {
+            var minutes = Math.floor(time / 60);
+            var seconds = Math.floor(time - Math.floor(time / 60) * 60);
+            var minutesVal = minutes;
+            var secondsVal = seconds;
+            if (minutes < 10) {
+                minutesVal = '0' + minutes;
+            }
+            if (seconds < 10) {
+                secondsVal = "0" + seconds;
+            }
+
+            return minutesVal + ':' + secondsVal;
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
-  }]);
 
-  return Description;
+    _createClass(Description, [{
+        key: 'render',
+        value: function render() {
+
+            var dist = this.state.distance + '%';
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'description-block' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'description-block-card' },
+                    this.props.descAnswer === undefined ? //|| this.props.newLevel ) 
+                    _react2.default.createElement(
+                        'p',
+                        { className: 'task-instruction' },
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            '\u041F\u043E\u0441\u043B\u0443\u0448\u0430\u0439\u0442\u0435 \u043F\u043B\u0435\u0435\u0440.'
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            '\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043F\u0442\u0438\u0446\u0443 \u0438\u0437 \u0441\u043F\u0438\u0441\u043A\u0430.'
+                        )
+                    ) : _react2.default.createElement(
+                        _react2.default.Fragment,
+                        null,
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'card-body' },
+                            _react2.default.createElement('img', { className: 'bird-image',
+                                src: this.props.image[this.props.clrBtn][this.props.descAnswer] }),
+                            _react2.default.createElement(
+                                'ul',
+                                { className: 'list-group-card' },
+                                _react2.default.createElement(
+                                    'li',
+                                    null,
+                                    _react2.default.createElement(
+                                        'h4',
+                                        null,
+                                        this.props.variableBirds[this.props.clrBtn][this.props.descAnswer]
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    null,
+                                    this.props.lat[this.props.clrBtn][this.props.descAnswer]
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    null,
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'audio-player', id: 'audio-player2' },
+                                        _react2.default.createElement('audio', { id: 'audio2',
+                                            src: this.props.sound[this.props.clrBtn][this.props.descAnswer],
+                                            onLoadedMetadata: this.onLoadedMetadata }),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'controls' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { id: 'playback-button2', className: 'playback-button paused', onClick: this.startPlayMusic },
+                                                _react2.default.createElement('div', null)
+                                            ),
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'timebar', id: 'timebar2' },
+                                                _react2.default.createElement('div', { className: 'timebar-bar', style: { backgroundImage: 'linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140)' + dist + ', rgb(115, 115, 115)' + dist + ', rgb(115, 115, 115) 100%)' },
+                                                    id: 'timebar-bar2' /*onClick={this.audioChangeTime}*/ }),
+                                                _react2.default.createElement('div', { className: 'timebar-circle', id: 'timebar-circle2', style: { left: dist } }),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'timebar-time-info' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        null,
+                                                        this.setTime(this.state.currentAudioTime)
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        null,
+                                                        this.setTime(this.state.audioDuration)
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'bird-description' },
+                            this.props.info[this.props.clrBtn][this.props.descAnswer]
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Description;
 }(_react2.default.Component);
 
 Description.propTypes = {};
 exports.default = Description;
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -638,13 +1010,13 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(12);
+var _reactDom = __webpack_require__(13);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-__webpack_require__(20);
+__webpack_require__(21);
 
-var _Quiz = __webpack_require__(21);
+var _Quiz = __webpack_require__(22);
 
 var _Quiz2 = _interopRequireDefault(_Quiz);
 
@@ -653,7 +1025,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_Quiz2.default, null), document.getElementById('container'));
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -666,7 +1038,7 @@ _reactDom2.default.render(_react2.default.createElement(_Quiz2.default, null), d
  * LICENSE file in the root directory of this source tree.
  */
 
-var l=__webpack_require__(2),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.forward_ref"):60112,y=n?Symbol.for("react.suspense"):60113,z=n?Symbol.for("react.memo"):60115,A=n?Symbol.for("react.lazy"):
+var l=__webpack_require__(3),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.forward_ref"):60112,y=n?Symbol.for("react.suspense"):60113,z=n?Symbol.for("react.memo"):60115,A=n?Symbol.for("react.lazy"):
 60116,B="function"===typeof Symbol&&Symbol.iterator;function C(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}
 var D={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},E={};function F(a,b,c){this.props=a;this.context=b;this.refs=E;this.updater=c||D}F.prototype.isReactComponent={};F.prototype.setState=function(a,b){if("object"!==typeof a&&"function"!==typeof a&&null!=a)throw Error(C(85));this.updater.enqueueSetState(this,a,b,"setState")};F.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function G(){}G.prototype=F.prototype;function H(a,b,c){this.props=a;this.context=b;this.refs=E;this.updater=c||D}var I=H.prototype=new G;I.constructor=H;l(I,F.prototype);I.isPureReactComponent=!0;var J={current:null},K=Object.prototype.hasOwnProperty,L={key:!0,ref:!0,__self:!0,__source:!0};
@@ -685,7 +1057,7 @@ exports.useLayoutEffect=function(a,b){return Z().useLayoutEffect(a,b)};exports.u
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -706,7 +1078,7 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(2);
+var _assign = __webpack_require__(3);
 var checkPropTypes = __webpack_require__(4);
 
 var ReactVersion = '16.13.1';
@@ -2605,7 +2977,7 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2643,15 +3015,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(13);
+  module.exports = __webpack_require__(14);
 } else {
-  module.exports = __webpack_require__(16);
+  module.exports = __webpack_require__(17);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2667,7 +3039,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(1),n=__webpack_require__(2),r=__webpack_require__(6);function u(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(u(227));
+var aa=__webpack_require__(1),n=__webpack_require__(3),r=__webpack_require__(6);function u(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(u(227));
 function ba(a,b,c,d,e,f,g,h,k){var l=Array.prototype.slice.call(arguments,3);try{b.apply(c,l)}catch(m){this.onError(m)}}var da=!1,ea=null,fa=!1,ha=null,ia={onError:function(a){da=!0;ea=a}};function ja(a,b,c,d,e,f,g,h,k){da=!1;ea=null;ba.apply(ia,arguments)}function ka(a,b,c,d,e,f,g,h,k){ja.apply(this,arguments);if(da){if(da){var l=ea;da=!1;ea=null}else throw Error(u(198));fa||(fa=!0,ha=l)}}var la=null,ma=null,na=null;
 function oa(a,b,c){var d=a.type||"unknown-event";a.currentTarget=na(c);ka(d,b,void 0,a);a.currentTarget=null}var pa=null,qa={};
 function ra(){if(pa)for(var a in qa){var b=qa[a],c=pa.indexOf(a);if(!(-1<c))throw Error(u(96,a));if(!sa[c]){if(!b.extractEvents)throw Error(u(97,a));sa[c]=b;c=b.eventTypes;for(var d in c){var e=void 0;var f=c[d],g=b,h=d;if(ta.hasOwnProperty(h))throw Error(u(99,h));ta[h]=f;var k=f.phasedRegistrationNames;if(k){for(e in k)k.hasOwnProperty(e)&&ua(k[e],g,h);e=!0}else f.registrationName?(ua(f.registrationName,g,h),e=!0):e=!1;if(!e)throw Error(u(98,d,a));}}}}
@@ -2950,7 +3322,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!gk(c))throw Er
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2978,7 +3350,7 @@ exports.unstable_shouldYield=function(){var a=exports.unstable_now();V(a);var b=
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3844,7 +4216,7 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3866,10 +4238,10 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var React = __webpack_require__(1);
-var _assign = __webpack_require__(2);
+var _assign = __webpack_require__(3);
 var Scheduler = __webpack_require__(6);
 var checkPropTypes = __webpack_require__(4);
-var tracing = __webpack_require__(17);
+var tracing = __webpack_require__(18);
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED; // Prevent newer renderers from RTE when used with older react package versions.
 // Current owner and dispatcher used to share the same ref,
@@ -28864,22 +29236,22 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(18);
-} else {
   module.exports = __webpack_require__(19);
+} else {
+  module.exports = __webpack_require__(20);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28896,7 +29268,7 @@ var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unst
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29253,13 +29625,13 @@ exports.unstable_wrap = unstable_wrap;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29275,17 +29647,17 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(26);
+__webpack_require__(27);
 
-var _Header = __webpack_require__(27);
+var _Header = __webpack_require__(28);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Question = __webpack_require__(30);
+var _Question = __webpack_require__(8);
 
 var _Question2 = _interopRequireDefault(_Question);
 
@@ -29293,23 +29665,27 @@ var _Answers = __webpack_require__(33);
 
 var _Answers2 = _interopRequireDefault(_Answers);
 
-var _Description = __webpack_require__(8);
+var _Description = __webpack_require__(9);
 
 var _Description2 = _interopRequireDefault(_Description);
 
-var _InfoBirds = __webpack_require__(36);
+var _Final = __webpack_require__(36);
+
+var _Final2 = _interopRequireDefault(_Final);
+
+var _InfoBirds = __webpack_require__(38);
 
 var _InfoBirds2 = _interopRequireDefault(_InfoBirds);
 
-var _publicInfo = __webpack_require__(37);
+var _publicInfo = __webpack_require__(39);
 
 var _publicInfo2 = _interopRequireDefault(_publicInfo);
 
-var _correct_answer = __webpack_require__(38);
+var _correct_answer = __webpack_require__(40);
 
 var _correct_answer2 = _interopRequireDefault(_correct_answer);
 
-var _incorrect_answer = __webpack_require__(39);
+var _incorrect_answer = __webpack_require__(41);
 
 var _incorrect_answer2 = _interopRequireDefault(_incorrect_answer);
 
@@ -29324,18 +29700,34 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Quiz = function (_React$Component) {
     _inherits(Quiz, _React$Component);
 
-    function Quiz() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
+    function Quiz(props) {
         _classCallCheck(this, Quiz);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
+        //this.correctAudioPlayer = React.createRef();
+        //this.wrongAudioPlayer = React.createRef();
+        var _this = _possibleConstructorReturn(this, (Quiz.__proto__ || Object.getPrototypeOf(Quiz)).call(this, props));
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Quiz.__proto__ || Object.getPrototypeOf(Quiz)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+        _this.showScore = function (countWrong) {
+            _this.setState({
+                score: _this.state.score + _this.state.count - countWrong,
+                guessed: true,
+                count: 5,
+                newLevel: false
+            });
+        };
+
+        _this.changeLevel = function (EO) {
+            _this.setState({
+                newLevel: true,
+                clrBtn: _this.state.clrBtn + 1,
+                guessed: false,
+                descAnswer: undefined,
+                rand: Math.floor(Math.random() * (5 - 0 + 1)) + 0
+
+            });
+        };
+
+        _this.state = {
             score: 0,
             typeBirds: _publicInfo2.default.TypeBirds,
             clrBtn: 0,
@@ -29343,36 +29735,124 @@ var Quiz = function (_React$Component) {
             description: null,
             rand: Math.floor(Math.random() * (5 - 0 + 1)) + 0,
             image: _InfoBirds2.default.Image,
-            variableBirds: _InfoBirds2.default.VariableBirds
+            variableBirds: _InfoBirds2.default.VariableBirds,
+            lat: _InfoBirds2.default.Lat,
+            info: _InfoBirds2.default.InfoBirds,
+            count: 5,
+            descAnswer: undefined,
+            guessed: false,
+            newLevel: false
 
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+            //arrRed: [],
+            //arrGreen: [],
+        };
+        return _this;
     }
 
     _createClass(Quiz, [{
         key: 'render',
+
+
+        /*returnNextLevel = (EO) => {
+            this.setState({
+                newLevel: false,
+            });    
+        }   
+        */
+        /*
+        handleDesc = (EO) => {
+            if (Number(EO) == this.state.rand && this.state.arrGreen.length == 0) {
+                this.correctAudioPlayer.current.currentTime = 0;
+                this.correctAudioPlayer.current.play();
+                this.setState ({
+                    score: this.state.count + this.state.score,
+                    arrGreen: this.state.arrGreen.concat(EO)
+                });
+            } else if (this.state.rand != EO && !this.state.arrRed.includes(EO) && this.state.arrGreen.length == 0) { 
+                this.wrongAudioPlayer.current.currentTime = 0;
+                this.wrongAudioPlayer.current.play();
+                this.setState({
+                    arrRed: this.state.arrRed.concat(EO),
+                    count: this.state.count - 1,
+                });
+                } else {
+                    }
+           }    
+        */
         value: function render() {
-            return _react2.default.createElement(
-                _react2.default.Fragment,
-                null,
-                _react2.default.createElement(_Header2.default, { score: this.state.score,
-                    typeBirds: this.state.typeBirds,
-                    clrBtn: this.state.clrBtn
-                }),
-                _react2.default.createElement(_Question2.default, { sound: this.state.sound,
-                    clrBtn: this.state.clrBtn,
-                    oneBird: this.state.description,
-                    image: this.state.image,
-                    rand: this.state.rand,
-                    variableBirds: this.state.variableBirds
-                }),
-                _react2.default.createElement(_Answers2.default, { variableBirds: this.state.variableBirds,
-                    descAnswer: this.handleDesc,
-                    clrBtn: this.state.clrBtn,
-                    rand: this.state.rand
-                }),
-                _react2.default.createElement('audio', { id: 'correct_answer', src: _correct_answer2.default }),
-                _react2.default.createElement('audio', { id: 'incorrect_answer', src: _incorrect_answer2.default })
-            );
+            var _this2 = this;
+
+            if (this.state.clrBtn === 6) {
+                return _react2.default.createElement(
+                    _react2.default.Fragment,
+                    null,
+                    _react2.default.createElement(_Header2.default, { score: this.state.score,
+                        typeBirds: this.state.typeBirds,
+                        clrBtn: this.state.clrBtn
+                    }),
+                    _react2.default.createElement(_Final2.default, { score: this.state.score
+                    })
+                );
+            } else {
+                return _react2.default.createElement(
+                    _react2.default.Fragment,
+                    null,
+                    _react2.default.createElement(_Header2.default, { score: this.state.score,
+                        typeBirds: this.state.typeBirds,
+                        clrBtn: this.state.clrBtn
+                    }),
+                    _react2.default.createElement(_Question2.default, { sound: this.state.sound,
+                        clrBtn: this.state.clrBtn,
+                        oneBird: this.state.description,
+                        image: this.state.image,
+                        rand: this.state.rand,
+                        variableBirds: this.state.variableBirds,
+                        guessed: this.state.guessed
+                    }),
+                    _react2.default.createElement(_Answers2.default, { variableBirds: this.state.variableBirds,
+                        descAnswer: this.state.descAnswer
+                        //descAnswer2={this.handleDesc} 
+                        , clrBtn: this.state.clrBtn,
+                        rand: this.state.rand,
+                        sound: this.state.sound,
+                        oneBird: this.state.description,
+                        image: this.state.image,
+                        lat: this.state.lat,
+                        info: this.state.info,
+                        newLevel: this.state.newLevel,
+                        guessed: this.state.guessed,
+
+                        cbChooseCorrectAnswer: this.showScore
+                        //cbReturnNextLevel = {this.returnNextLevel}
+
+                        // arrRed={this.state.arrRed}
+                        // arrGreen={this.state.arrGreen}
+                    }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'next-level' },
+                        this.state.guessed ? _react2.default.createElement(
+                            'button',
+                            { className: 'btn-next-level btn-green', onClick: function onClick(e) {
+                                    return _this2.changeLevel();
+                                } },
+                            '\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C'
+                        ) : _react2.default.createElement(
+                            'button',
+                            { className: 'btn-next-level btn-grey', disabled: true, onClick: function onClick(e) {
+                                    return _this2.changeLevel();
+                                } },
+                            '\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C'
+                        ),
+                        _react2.default.createElement('audio', { id: 'correct_answer', src: _correct_answer2.default
+                            //ref={this.correctAudioPlayer}
+                        }),
+                        _react2.default.createElement('audio', { id: 'incorrect_answer', src: _incorrect_answer2.default
+                            //ref={this.wrongAudioPlayer}
+                        })
+                    )
+                );
+            }
         }
     }]);
 
@@ -29383,7 +29863,7 @@ Quiz.propTypes = {};
 exports.default = Quiz;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29405,7 +29885,7 @@ exports.isValidElementType=function(a){return"string"===typeof a||"function"===t
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29594,7 +30074,7 @@ exports.typeOf = typeOf;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29608,7 +30088,7 @@ exports.typeOf = typeOf;
 
 
 var ReactIs = __webpack_require__(7);
-var assign = __webpack_require__(2);
+var assign = __webpack_require__(3);
 
 var ReactPropTypesSecret = __webpack_require__(5);
 var checkPropTypes = __webpack_require__(4);
@@ -30193,7 +30673,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30264,13 +30744,13 @@ module.exports = function() {
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30286,13 +30766,13 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(28);
+__webpack_require__(29);
 
-var _logo = __webpack_require__(29);
+var _logo = __webpack_require__(30);
 
 var _logo2 = _interopRequireDefault(_logo);
 
@@ -30374,244 +30854,18 @@ Header.propTypes = {};
 exports.default = Header;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "4f82cd73f3446ef1af7fa6d3a302ef3a.svg");
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-__webpack_require__(31);
-
-var _bird = __webpack_require__(32);
-
-var _bird2 = _interopRequireDefault(_bird);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var svg_playback = [];
-
-var Question = function (_React$Component) {
-    _inherits(Question, _React$Component);
-
-    function Question() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
-        _classCallCheck(this, Question);
-
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Question.__proto__ || Object.getPrototypeOf(Question)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            audioDuration: '', //длительность аудио
-            currentAudioTime: '', //текущее время воспроизведение  
-            distance: 0 //расстояние, на котором расположен кружочек в панели управлении от начала
-
-            //componentDidUpdate(prevProps, prevState, snapshot) {
-            //    if (prevProps.src!==this.props.src) {
-            //      this.pause();
-            //      this.setState({
-            //        distance: 0
-            //      })
-            //    }
-            //}
-
-        }, _this.startPlayMusic = function (EO) {
-            var audio = document.getElementById("audio");
-            console.log(audio);
-            if (audio.paused) {
-                audio.play();
-                _this.play();
-            } else {
-                audio.pause();
-                _this.pause();
-            }
-        }, _this.play = function () {
-
-            var playerButton = document.getElementById("playback-button");
-            playerButton.classList.add("playing");
-            playerButton.classList.remove("paused");
-
-            _this.interval = setInterval(function () {
-                var currentAudioTime = document.getElementById("audio").currentTime;
-                //console.log(currentAudioTime);
-                _this.setState({
-                    currentAudioTime: currentAudioTime,
-                    distance: currentAudioTime / _this.state.audioDuration * 100
-                });
-                if (currentAudioTime === _this.state.audioDuration) {
-                    _this.pause();
-                }
-            }, 100);
-        }, _this.pause = function () {
-            var playerButton = document.getElementById("playback-button");
-            playerButton.classList.add('paused');
-            playerButton.classList.remove('playing');
-            clearInterval(_this.interval);
-        }, _this.setTime = function (time) {
-            var minutes = Math.floor(time / 60);
-            var seconds = Math.floor(time - Math.floor(time / 60) * 60);
-            var minutesVal = minutes;
-            var secondsVal = seconds;
-            if (minutes < 10) {
-                minutesVal = '0' + minutes;
-            }
-            if (seconds < 10) {
-                secondsVal = "0" + seconds;
-            }
-
-            return minutesVal + ':' + secondsVal;
-        }, _this.onLoadedMetadata = function () {
-            var audioDuration = document.getElementById("audio").duration;
-            _this.setState({
-                audioDuration: audioDuration,
-                currentAudioTime: 0
-            });
-        }, _temp), _possibleConstructorReturn(_this, _ret);
-    }
-
-    _createClass(Question, [{
-        key: 'render',
-
-        //перемотка аудио - пока не работает
-        /*audioChangeTime = (EO) => { 
-            EO = EO || window.event;
-              var progressBar = document.getElementById("timebar-bar");
-            console.log("EO.pageX=" + EO.pageX);
-            console.log("progressBar.offsetLeft=" + progressBar.offsetLeft);
-            console.log("EO.target.offsetLeft=" + EO.target.offsetLeft);
-            console.log("progressBar.pageX=" + progressBar.pageX);
-            //console.log("progressBar.getBoundingClientRect.left=" + progressBar.getBoundingClientRect.left);
-            var mouseX = Math.floor(EO.pageX - progressBar.offsetLeft);
-            //var mouseX = Math.floor(EO.pageX - EO.target.offsetLeft);
-            //var mouseX = Math.floor(EO.pageX - EO.target.getBoundingClientRect.left+window.pageXOffset);
-            console.log("mouseX=" + mouseX);
-              var progress = mouseX / (progressBar.offsetWidth / 100);
-            console.log("progressBar.offsetWidth=" + progressBar.offsetWidth);
-            console.log("progress= " + progress);
-            this.setState({
-                currentAudioTime : this.state.audioDuration * (progress / 100),
-                distance: progress 
-            })    
-         
-        }    
-        */
-        value: function render() {
-
-            var dist = this.state.distance + '%';
-
-            return (
-                //<React.Fragment> 
-                _react2.default.createElement(
-                    'div',
-                    { className: 'question-panel' },
-                    _react2.default.createElement('img', { src: _bird2.default, className: 'bird-image' }),
-                    _react2.default.createElement(
-                        'div',
-                        { className: '' },
-                        _react2.default.createElement(
-                            'ul',
-                            { className: 'question-panel-aside' },
-                            _react2.default.createElement(
-                                'li',
-                                { className: 'question-panel-item' },
-                                _react2.default.createElement(
-                                    'h3',
-                                    null,
-                                    '******'
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'li',
-                                { className: 'question-panel-item' },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'audio-player', id: 'audio-player' },
-                                    _react2.default.createElement('audio', { id: 'audio',
-                                        src: this.props.sound[this.props.clrBtn][this.props.rand],
-                                        onLoadedMetadata: this.onLoadedMetadata }),
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'controls' },
-                                        _react2.default.createElement(
-                                            'div',
-                                            { id: 'playback-button', className: 'playback-button paused', onClick: this.startPlayMusic },
-                                            _react2.default.createElement('div', null)
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'timebar', id: 'timebar' },
-                                            _react2.default.createElement('div', { className: 'timebar-bar', style: { backgroundImage: 'linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140)' + dist + ', rgb(115, 115, 115)' + dist + ', rgb(115, 115, 115) 100%)' },
-                                                id: 'timebar-bar' /*onClick={this.audioChangeTime}*/ }),
-                                            _react2.default.createElement('div', { className: 'timebar-circle', id: 'timebar-circle', style: { left: dist } }),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'timebar-time-info' },
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    null,
-                                                    this.setTime(this.state.currentAudioTime)
-                                                ),
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    null,
-                                                    this.setTime(this.state.audioDuration)
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
-                //</React.Fragment>             
-
-            );
-        }
-    }]);
-
-    return Question;
-}(_react2.default.Component);
-
-Question.propTypes = {};
-exports.default = Question;
 
 /***/ }),
 /* 31 */
@@ -30644,11 +30898,11 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(3);
+var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Description = __webpack_require__(8);
+var _Description = __webpack_require__(9);
 
 var _Description2 = _interopRequireDefault(_Description);
 
@@ -30656,11 +30910,16 @@ __webpack_require__(35);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+//let red = [];
+//let green = [];
 
 var Answers = function (_React$Component) {
   _inherits(Answers, _React$Component);
@@ -30678,16 +30937,56 @@ var Answers = function (_React$Component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Answers.__proto__ || Object.getPrototypeOf(Answers)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       descAnswer: _this.props.descAnswer,
-      rand: _this.props.rand
+      guessed: _this.props.guessed,
+      countWrong: 0,
+      backgroundColor: ["#444", "#444", "#444", "#444", "#444", "#444"]
+    }, _this.componentWillReceiveProps = function (newProps) {
+      console.log("Answer componentWillReceiveProps");
+      if (newProps.newLevel) {
+        _this.setState({ descAnswer: newProps.descAnswer,
+          guessed: false,
+          countWrong: 0,
+          backgroundColor: ["#444", "#444", "#444", "#444", "#444", "#444"],
+          newLevel: false
+        });
+
+        //this.props.cbReturnNextLevel();
+      } else null;
     }, _this.onItemClick = function (EO) {
       console.log(EO.target);
       console.log(EO.target.id);
-      //this.setState({ descAnswer: Number(EO.target.id) //[this.props.clrBtn][this.props.rand]
-      // });
+      //EO.preventDefault;
+      //this.props.descAnswer2(EO.target.id);
+      _this.setState({ descAnswer: Number(EO.target.id) });
 
-      Number(EO.target.id) == _this.props.rand ? (EO.target.firstChild.className = "li-btn green", document.getElementById("correct_answer").play()) : (EO.target.firstChild.className = "li-btn red", document.getElementById("incorrect_answer").play());
+      var newColors = [].concat(_toConsumableArray(_this.state.backgroundColor)); // копия массива цветов
+      newColors[EO.target.id] = "green";
+
+      var newColors2 = [].concat(_toConsumableArray(_this.state.backgroundColor)); // копия массива цветов
+      newColors2[EO.target.id] = "red";
+
+      Number(EO.target.id) == _this.props.rand ? ( //EO.target.firstChild.className="li-btn green",
+
+      //(EO.target.firstChild.style.backgroundColor="green",
+      document.getElementById("correct_answer").play(), _this.setState({ guessed: true, backgroundColor: newColors }), _this.props.cbChooseCorrectAnswer(_this.state.countWrong) //кол-бэк в Header
+      ) : !_this.state.guessed ? ( //(EO.target.firstChild.className="li-btn red" ,
+      //(EO.target.firstChild.style.backgroundColor="red",
+      document.getElementById("incorrect_answer").play(), _this.setState({ countWrong: _this.state.countWrong + 1, backgroundColor: newColors2 })) : null;
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
+
+  //componentDidUpdate = () => { 
+  //  if (this.state.newLevel) {
+  //    this.setState({newLevel:false});
+  //  }
+  //}
+
+  //componentDidUpdate = () => { 
+  //  if (this.state.newLevel) {
+  //   this.props.cbReturnNextLevel();
+  //  }
+  //}
+
 
   _createClass(Answers, [{
     key: 'render',
@@ -30698,17 +30997,8 @@ var Answers = function (_React$Component) {
         return _react2.default.createElement(
           'li',
           { key: index, id: index, className: 'answers-list-item', onClick: _this2.onItemClick },
-          _react2.default.createElement('span', { className: 'li-btn'
-            //{
-            //(!this.state.descAnswer)
-            //? "li-btn"
-            //: (this.state.descAnswer && (this.state.descAnswer == this.props.rand) )
-            //  ? "li-btn green"
-            //  : "li-btn red"
-
-
-            //}
-
+          _react2.default.createElement('span', { className: 'li-btn',
+            style: { backgroundColor: _this2.state.backgroundColor[index] }
           }),
           item
         );
@@ -30728,12 +31018,17 @@ var Answers = function (_React$Component) {
               answersList
             )
           ),
-          _react2.default.createElement(_Description2.default, null),
-          _react2.default.createElement(
-            'button',
-            { className: 'next-btn' },
-            'Next level'
-          )
+          _react2.default.createElement(_Description2.default, { descAnswer: this.state.descAnswer,
+            variableBirds: this.props.variableBirds,
+            clrBtn: this.props.clrBtn,
+            sound: this.props.sound,
+            oneBird: this.props.description,
+            image: this.props.image,
+            rand: this.props.rand,
+            info: this.props.info,
+            lat: this.props.lat,
+            newLevel: this.props.newLevel
+          })
         )
         //</React.Fragment>             
 
@@ -30767,18 +31062,120 @@ exports.default = Answers;
 
 /***/ }),
 /* 36 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = {"Sound":[["https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3","https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC512582-190604_1087_Grus_tok.mp3","https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC489247-190724_09.10h_huiszwaluw_biesbosch_amaliahoeve_roep_100%2Bex_fouragerend_gezien_%20%282%29.mp3","https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC486956-190623_22.37h_nachtzwaluw_rechte%20heide_zang_ad%20_2ex_gezien_.mp3","https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC501461-190616_08.13h_koekoek_brabantse%20biesbosch%20jantjesplaat_roep_1%20ex_ad%20m_ter%20plaatse%20zingend_gezien_.mp3","https://www.xeno-canto.org/sounds/uploaded/RFGQDPLDEC/XC518417-Kj%C3%B8ttmeis%20XC%20Helg%C3%B8ya%20Elias%20A.%20Ryberg20200108133922_079.mp3"],["https://www.xeno-canto.org/sounds/uploaded/CXFHOPIVAS/XC503224-191020_0134.mp3","https://www.xeno-canto.org/sounds/uploaded/RLRHCUIPIY/XC512540-gawron%20Suble%2019.12.19%20%2012.35.mp3","https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC510498-Coloeus%20monedula_2019.11.13_11.55_01.mp3","https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC513326-190704_1146_TF-Glogow.mp3","https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC500868-Pica%20pica2019.08.23_09.18_02.mp3","https://www.xeno-canto.org/sounds/uploaded/TFOGOENSTQ/XC501517-191008_1590%201300.%20Eichelh%C3%A4her%20D%2C%20NW%2C%20LEV.%20Stephan%20Risch.mp3"],["https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC512407-150622_03%20zi%C4%99ba%20%282%29.mp3","https://www.xeno-canto.org/sounds/uploaded/OTVUCEGYZN/XC495381-Kruisbek%20roep%20NHD%20290619.mp3","https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC324106-Turkawka_Streptopelia_turtur_Poland_Jarek_Matusiak_2011625_07.mp3","https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC518928-AB-017%20dzi%C4%99cio%C5%82%20du%C5%BCy%20agresja%20%282%29.mp3","https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC477326-dudek%20%282%29.mp3","https://www.xeno-canto.org/sounds/uploaded/TMUAWSDHDJ/XC511871-G.mp"],["https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC462158-Skowronek_Alauda_arvensis_Poland_Jarek_Matusiak_%20-006%20skowronek%20%282%29.mp3","https://www.xeno-canto.org/sounds/uploaded/HILVWSADVL/XC513809-R07_0052%20Thrush%20Nightingale%20Snipe.mp3","https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC515519-2020.01.01_17.24_01.MP3","https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC491801-2019.07.07_06.28_01.mp3","https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC517421-AB-004%20%282%29%20jemio%C5%82uszka.mp3","https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC489265-190724_07.58h_putter_biesbosch_%20boompjes%20langs%20open%20water_zang_1ex_ad_niet%20gezien_.mp3"],["https://www.xeno-canto.org/sounds/uploaded/KTBTZAHSXF/10_Aquila_nipalensis_al02D85.mp3","https://www.xeno-canto.org/sounds/uploaded/SDPCHKOHRH/XC485740-2019-06-22%20Selenga%20Milan%20brun%20cris%20de%20quemandage%203.mp3","https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC513498-190709_1175_Cir.cyan-f.mp3","https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC496049-Pilgrimsfalk_06.mp3","https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC512740-Duvh%C3%B6k_09.mp3","https://www.xeno-canto.org/sounds/uploaded/WNLIDKJKXT/XC518386-sense%20t%C3%ADtol.mp3"],["https://www.xeno-canto.org/sounds/uploaded/WOEAFQRMUD/XC293087-Diomedea%20exulans151120_T254.mp3","https://www.xeno-canto.org/sounds/uploaded/YHKQPPJDVP/XC411507-171217_1491%20BF%20Booby%205ft%20IDLP%201230%20mp3%20amp.mp3","https://www.xeno-canto.org/sounds/uploaded/XQEVNREHJY/SHEARWATER%20Christmas%20Island_04_Motu_Isla%20de%20Pascua-Easter%20Island_CH_4MAR03_Alvaro%20Jaramillo.mp3","https://www.xeno-canto.org/sounds/uploaded/XAMHIHFTZG/XC331138-call1.mp3","https://www.xeno-canto.org/sounds/uploaded/OOECIWCSWV/XC449827-LS100829%20King%20Penguin%20call%20A.mp3","https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC501190-190801_06.50h_zilvermeeuw_duinen%20van%20goeree_roep_2ex_overvliegend_gezien_.mp3"]],"VariableBirds":[["Ворон","Журавль","Ласточка","Козодой","Кукушка","Синица"],["Воробей","Грач","Галка","Певчий дрозд","Сорока","Сойка"],["Зяблик","Клёст","Горлица","Дятел","Удод","Стриж"],["Жаворонок","Соловей","Скворец","Иволга","Свиристель","Щегол"],["Oрёл","Коршун","Лунь","Сокол","Ястреб","Филин"],["Альбатрос","Олуша","Буревестник","Пеликан","Пингвин","Чайка"]],"Image":[["https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg","https://live.staticflickr.com/65535/49221158846_b0b69a58f1.jpg","https://live.staticflickr.com//65535//48539007512_5029d2a9a0.jpg","https://live.staticflickr.com/65535/48456345286_dbc8530027.jpg","https://live.staticflickr.com/65535/48377838151_e15f430ec1.jpg","https://live.staticflickr.com//65535//49366042493_c48c81d58d.jpg"],["https://live.staticflickr.com//65535//49366595303_06cf65b07e.jpg","https://live.staticflickr.com//65535//49347123322_291c86b016.jpg","https://live.staticflickr.com//65535//49237149586_993cf685c5.jpg","https://live.staticflickr.com/65535/48979125763_e2534f54bd.jpg","https://live.staticflickr.com//65535//49360363066_ff02bb6a73.jpg","https://live.staticflickr.com//65535//49369678956_9a7465c7f4.jpg"],["https://live.staticflickr.com/65535/49143150817_2d3a2f6c1e.jpg","https://live.staticflickr.com//65535//49365470123_f2de66bb35.jpg","https://live.staticflickr.com/65535/48063004977_84252f9ceb.jpg","https://live.staticflickr.com/65535/49339376578_e933426455.jpg","https://live.staticflickr.com//65535//49226383598_6f8be86a06.jpg","https://live.staticflickr.com//65535//48386150031_7b749df74b.jpg"],["https://live.staticflickr.com/65535/47105096764_f751fba568.jpg","https://live.staticflickr.com/7605/27669397735_f3c21758f2.jpg","https://live.staticflickr.com/65535/49357593971_9509fe1d7c.jpg","https://live.staticflickr.com/65535/47102184004_58a93380b9.jpg","https://live.staticflickr.com//65535//49367433842_1b06da0e6b.jpg","https://live.staticflickr.com//65535//49366257253_db3ce48b9a.jpg"],["https://live.staticflickr.com//4835//43867392960_7105d71e19.jpg","https://live.staticflickr.com//65535//48701190276_ee2a9ed594.jpg","https://live.staticflickr.com/65535/49322743903_32f3922d9e.jpg","https://live.staticflickr.com//65535//49310710607_92a3a145a9.jpg","https://live.staticflickr.com//65535//49024617331_b9d0d2c9b3.jpg","https://live.staticflickr.com/65535/48137123012_393653c2e4.jpg"],["https://live.staticflickr.com/7557/16260253965_8e9430cb66.jpg","https://live.staticflickr.com/800/40645471394_4422e69ed8.jpg","https://live.staticflickr.com//607//22136056020_935cb113f9.jpg","http://www.ebirds.ru/images/e/11.jpg","https://live.staticflickr.com/5202/5252413926_8e013a3efd.jpg","https://live.staticflickr.com/65535/48577115317_7034201dde.jpg"]],"Lat":[["Corvus corax","Grus grus","Coturnix coturnix","Caprimulgus europaeus","Cuculus canorus","Parus major"],["Passer domesticus","Corvus frugilegus","Coloeus monedula","Turdus philomelos","Pica pica","Garrulus glandarius"],["Fringilla coelebs","Loxia curvirostra","Streptopelia turtur","Dendrocopos major","Upupa epops","Apus apus"],["Alauda arvensis","Luscinia luscinia","Sturnus vulgaris","Oriolus oriolus","Bombycilla garrulus","Carduelis carduelis"],["Aquila nipalensis","Milvus migrans","Circus cyaneus","Falco peregrinus","Accipiter gentilis","Bubo bubo"],["Diomedea exulans","Sula nebouxii","Puffinus griseus","Pelecanus","Aptenodytes forsteri","Larus argentatus"]],"InfoBirds":[["Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра, монархия рухнет.","Звуки, издаваемые журавлем, похожи на звонкое «кур-лы – кур-лы». Журавли чаще всего поют дуэтом – одна птица начинает запев со слога «кур», а вторая подхватывает «лы». Если птица поёт одна, то она издает только звук «кур».","Для ласточек характерно негромкое щебетание. Песни ласточек не смолкают на протяжении всего лета. Исследователи различают у птиц до 6 щебечущих звуков: «вит», «ви-вит», «чивит», «чиривит» и т.п. Ласточки любят петь дуэтом.","Козодой – неприметная птица, известная благодаря своему голосу. Песня козодоя звучит как монотонная трель похожая на тарахтение мотоцикла. Такое дребезжание слышно от заката до рассвета, его тональность, частота и громкость изменяются.","Кукушку назвали так из-за особенностей ее песен. Звонкое «ку-ку» не спутать ни с какой другой птицей. Кукушки не строят гнезда, их потомство выращивают другие виды пернатых, которым кукушки подбрасывают свои яйца.","В щебетании синиц различают более 40 различных звуковых сочетаний. Поют они практически круглый год, немного затихая только зимой. Синицы настоящие санитары леса. Одна пара синиц в период гнездования оберегает от вредителей десятки деревьев."],["Воробьи являются самыми известными и узнаваемыми пернатыми. Их легко узнать по пестрому оперению и задорному чириканью. Воробьи относятся к синатропному виду — они селятся поблизости к человеческому жилищу.","Грачи очень умные и сообразительные птицы. С помощью клюва они создают и используют простейшие орудия. У грачей развит рефлекс на звуки трактора. Услышав «тарахтение», они летят на звук – трактор пашет землю, значит, в этом месте много корма.","Слово «галка» произошло из старославянского языка и переводится как «чёрный». Этим словом часто называют воронов или других черных птиц. Латинское название галки «monedula» связывают со словами монета за любовь птицы к блестящим и ярким вещам.","Дрозд — лучший певец из отряда воробьиных. Песня состоит только из красивых звучных свистов и коротких трелей. Чаще всего её можно услышать в утреннее и вечернее время. Поют дрозды в течении всего периода гнездования.","Сорока очень трудолюбивая птица. Она строит до восьми гнёзд, а потом выбирает из них самое лучшее. Вход в гнездо сорок всегда обращен на юг, чтобы в жилище было теплее. Сороки являются единственными птицами, которые узнают себя в зеркале.","Когда сойка волнуется, хохолок на её голове взъерошивается. Птица старается создать устрашающее зрелище. Сойки умеют имитировать голоса других птиц, животных и звуки, которые создает человек. На зиму они делают большие запасы желудей и орехов."],["В дикой природе насчитывается 450 видов зябликов. Зимой зяблики ведут стайный образ жизни. Иногда в их семьях можно увидеть воробьев. Запевают зяблики весной, с наступлением брачного периода. Их пение – это заливистые многоминутные рулады.","Клестов называют «рождественскими» птицами. В естественных условиях они дают потомство зимой – в январе. Эти птицы утепляют свои гнезда мхом и шерстью животных, потому птенцам не холодно. В поисках шишек клесты могут улетать за 3500 км от гнезда.","Горлица обитает в смешанных и широколиственных лесах, а также в городских парках и поселках. Птицы часто выбирают места жизни рядом с человеком и легко привыкают к людям. Благодаря мелодичному приятному пению горлиц часто разводят в домашних условиях.","Дятел – заметная и шумная птица, часто живет рядом с человеком. С середины января до конца июня можно услышать «барабанную дробь» дятлов – трель от вибрации веток под быстрыми ударами клюва птицы. В хорошую погоду дробь слышна в радиусе 1,5 км.","Удоды предпочитают жить на открытых ландшафтах с отдельными деревьями или рощами. Наиболее удобными для птицы являются лесостепь и саванна. Удод может выбирать места жительства рядом с человеком: пастбища, виноградники, фруктовые сады.","Стрижа можно увидеть практически в каждом уголке планеты. Они обитают как в лесных зонах, так и на открытых местностях. Живут стрижи крупными стаями. Большие колонии этих птиц можно увидеть в городах или на прибрежных скалах."],["Жаворонки — перелетные птицы. С начала сентября они отлетают на юг. Возвращаются они в начале марта, независимо от того, сошел снег или нет. По прилету жаворонков определяли наступление весны и пору, когда пора пахать землю.","Соловьи поют с начала мая и до конца лета. Каждая песня соловья состоит из 12 повторяющихся элементов, которые еще называют коленами. Кроме собственных трелей, соловьи легко и хорошо перенимают пение других птиц.","Скворцы - перелётные птицы. Синхронный перелет больших стай скворцов называется мурмурацией. Это красивое и завораживающее явление – множество птиц будто танцуют в воздухе, образуя замысловатые фигуры, которые уменьшаются и увеличиваются в небе.","Мелодичность голоса иволги сравнивают со звучанием флейты. Человеку сложно разглядеть иволгу, так как она обитает высоко на деревьях. Иволга не только очень красивая, но и  полезная птица. Она уничтожает ядовитых гусениц, которых не поедают другие птицы.","У свиристели очень цепкие коготки, что помогает птице удерживаться на ветках и склевывать ягоды, которые труднее всего достать. В период ухаживаний самец предлагает самке ягоду или другое угощение. Если самка его принимает, то птицы создают пару.","Щеглы поют красиво и мелодично. И в природе, и в неволе они щебечут почти круглый год. В пении щегла различают более 20 переливчатых трелей. Щеглы привыкают к людям, и даже могут возвратиться к хозяину после того, как их выпустили на волю"],["В древние времена орел был символом солнца. Орлы часто парят над землей, при этом скорость их перемещения может достигать 240 км/ч. Иллюзия медленного движения происходит из-за высоты полета – более 700 метров","Коршуны – крупные хищники, в высоту они достигают около полуметра, а вес взрослых особей достигает 1 кг. Крылья узкие и длинные, их размах составляет 1,5 м. Коршуны часто гнездятся большими стаями и даже образуют крупные колонии.","Лунь – это небольшой сокол. Питается в основном мышевидными грызунами, основа его рациона – полёвки, хомяки, мыши. Оперение луня может быть пепельно-серым. С такой птицей связано сравнение «седой, как лунь».","Латинское название сокола Falco произошло от слова «серп» из-за серповидной формы крыльев. Длинные и широкие крылья позволяют соколу высоко подниматься в небо и свободно парить. Скорость полёта сокола достигает 280-320 километров в час.","Для всех ястребов характерны широкие и короткие крылья. Ещё один отличительный признак - белые «брови» над глазами. Славянские дружинники размещали изображение ястреба на своих знаменах, как символ отваги, мощи и безжалостности к врагам.","Полет филина бесшумный, зрение очень острое. Эти особенности делают птицу непревзойденным ночным охотником. У филина нет естественных врагов, ни один зверь не охотится на взрослых птиц. А вот на птенцов нападают лисы и волки."],["Альбатрос - самая крупная летающая птица в мире. Размах крыльев достигает три с половиной, вес - десять килограммов. Большую часть жизни альбатросы проводят в воздухе, покрывая над океанскими просторами огромные расстояния","Особенностью голубоногой олуши является не только насыщенный ярко-синий цвет лапок, но еще и тот факт, что они очень теплые. В то время как другие виды птиц греют кладки своим телом, голубоногая олуша делает это с помощью лапок","Размеры буревестниковых разные. Самые маленькие из них в длину составляют до 25 см, самые большие - до 1 м, при размахе крыльев около 2 м. Существует поверье, что появление буревестника в воздухе предвещает бурю, о чем говорит само название птицы.","Пеликаны — обитатели морей и рек. Ходят они неуклюже, но хорошо летают и плавают. Питаются в основном рыбой, устраивают коллективные охоты — выстроившись полукругом хлопают по воде крыльями и клювами и вытесняют напуганную рыбу на мелководье.","Самец императорского пингвина достигает роста 130 см, его масса может приближаться к 50 кг. Из всех современных пингвинов этот вид – самый крупный. Питание пингвина состоит из рыбы, кальмаров и криля. Охотятся птицы в океане большими группами.","Чайки населяют берега морей, озёр, рек, водохранилищ, болот, часто гнездятся на островах. С конца прошлого века чайки стали появляться в крупных городах, где устраивает гнёзда на крышах зданий. Все чайки ведут колониальный образ жизни."]]}
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+__webpack_require__(37);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Final = function (_React$Component) {
+    _inherits(Final, _React$Component);
+
+    function Final() {
+        _classCallCheck(this, Final);
+
+        return _possibleConstructorReturn(this, (Final.__proto__ || Object.getPrototypeOf(Final)).apply(this, arguments));
+    }
+
+    _createClass(Final, [{
+        key: 'render',
+        value: function render() {
+
+            if (this.props.score == 30) {
+
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'final' },
+                    _react2.default.createElement(
+                        'h1',
+                        null,
+                        '\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!'
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        '\u0412\u044B \u043F\u0440\u043E\u0448\u043B\u0438 \u0432\u0438\u043A\u0442\u043E\u0440\u0438\u043D\u0443 \u0438 \u0437\u0430\u043D\u044F\u043B\u0438 1-\u0435 \u043C\u0435\u0441\u0442\u043E, \u043D\u0430\u0431\u0440\u0430\u0432 ',
+                        this.props.score,
+                        ' \u0438\u0437 30 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u044B\u0445 \u0431\u0430\u043B\u043B\u043E\u0432.'
+                    ),
+                    _react2.default.createElement('img', { className: 'firework', src: 'https://i.gifer.com/WJ41.gif' })
+                );
+            } else {
+                return _react2.default.createElement(
+                    'div',
+                    { className: 'final' },
+                    _react2.default.createElement(
+                        'h1',
+                        null,
+                        '\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!'
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        '\u0412\u044B \u043F\u0440\u043E\u0448\u043B\u0438 \u0432\u0438\u043A\u0442\u043E\u0440\u0438\u043D\u0443 \u0438 \u043D\u0430\u0431\u0440\u0430\u043B\u0438 ',
+                        this.props.score,
+                        ' \u0438\u0437 30 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u044B\u0445 \u0431\u0430\u043B\u043B\u043E\u0432.'
+                    ),
+                    _react2.default.createElement('hr', { className: 'hr' }),
+                    _react2.default.createElement(
+                        'button',
+                        { className: 'btn-final' },
+                        '\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C \u0435\u0449\u0435 \u0440\u0430\u0437!'
+                    )
+                );
+            }
+        }
+    }]);
+
+    return Final;
+}(_react2.default.Component);
+
+Final.propTypes = {};
+exports.default = Final;
 
 /***/ }),
 /* 37 */
 /***/ (function(module, exports) {
 
-module.exports = {"TypeBirds":["Разминка","Воробьиные","Лесные птицы","Певчие птицы","Хищные птицы","Морские птицы"]}
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 38 */
+/***/ (function(module, exports) {
+
+module.exports = {"Sound":[["https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3","https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC512582-190604_1087_Grus_tok.mp3","https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC489247-190724_09.10h_huiszwaluw_biesbosch_amaliahoeve_roep_100%2Bex_fouragerend_gezien_%20%282%29.mp3","https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC486956-190623_22.37h_nachtzwaluw_rechte%20heide_zang_ad%20_2ex_gezien_.mp3","https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC501461-190616_08.13h_koekoek_brabantse%20biesbosch%20jantjesplaat_roep_1%20ex_ad%20m_ter%20plaatse%20zingend_gezien_.mp3","https://www.xeno-canto.org/sounds/uploaded/RFGQDPLDEC/XC518417-Kj%C3%B8ttmeis%20XC%20Helg%C3%B8ya%20Elias%20A.%20Ryberg20200108133922_079.mp3"],["https://www.xeno-canto.org/sounds/uploaded/CXFHOPIVAS/XC503224-191020_0134.mp3","https://www.xeno-canto.org/sounds/uploaded/RLRHCUIPIY/XC512540-gawron%20Suble%2019.12.19%20%2012.35.mp3","https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC510498-Coloeus%20monedula_2019.11.13_11.55_01.mp3","https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC513326-190704_1146_TF-Glogow.mp3","https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC500868-Pica%20pica2019.08.23_09.18_02.mp3","https://www.xeno-canto.org/sounds/uploaded/TFOGOENSTQ/XC501517-191008_1590%201300.%20Eichelh%C3%A4her%20D%2C%20NW%2C%20LEV.%20Stephan%20Risch.mp3"],["https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC512407-150622_03%20zi%C4%99ba%20%282%29.mp3","https://www.xeno-canto.org/sounds/uploaded/OTVUCEGYZN/XC495381-Kruisbek%20roep%20NHD%20290619.mp3","https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC324106-Turkawka_Streptopelia_turtur_Poland_Jarek_Matusiak_2011625_07.mp3","https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC518928-AB-017%20dzi%C4%99cio%C5%82%20du%C5%BCy%20agresja%20%282%29.mp3","https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC477326-dudek%20%282%29.mp3","https://www.xeno-canto.org/sounds/uploaded/TMUAWSDHDJ/XC511871-G.mp"],["https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC462158-Skowronek_Alauda_arvensis_Poland_Jarek_Matusiak_%20-006%20skowronek%20%282%29.mp3","https://www.xeno-canto.org/sounds/uploaded/HILVWSADVL/XC513809-R07_0052%20Thrush%20Nightingale%20Snipe.mp3","https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC515519-2020.01.01_17.24_01.MP3","https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC491801-2019.07.07_06.28_01.mp3","https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC517421-AB-004%20%282%29%20jemio%C5%82uszka.mp3","https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC489265-190724_07.58h_putter_biesbosch_%20boompjes%20langs%20open%20water_zang_1ex_ad_niet%20gezien_.mp3"],["https://www.xeno-canto.org/sounds/uploaded/KTBTZAHSXF/10_Aquila_nipalensis_al02D85.mp3","https://www.xeno-canto.org/sounds/uploaded/SDPCHKOHRH/XC485740-2019-06-22%20Selenga%20Milan%20brun%20cris%20de%20quemandage%203.mp3","https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC513498-190709_1175_Cir.cyan-f.mp3","https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC496049-Pilgrimsfalk_06.mp3","https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC512740-Duvh%C3%B6k_09.mp3","https://www.xeno-canto.org/sounds/uploaded/WNLIDKJKXT/XC518386-sense%20t%C3%ADtol.mp3"],["https://www.xeno-canto.org/sounds/uploaded/WOEAFQRMUD/XC293087-Diomedea%20exulans151120_T254.mp3","https://www.xeno-canto.org/sounds/uploaded/YHKQPPJDVP/XC411507-171217_1491%20BF%20Booby%205ft%20IDLP%201230%20mp3%20amp.mp3","https://www.xeno-canto.org/sounds/uploaded/XQEVNREHJY/SHEARWATER%20Christmas%20Island_04_Motu_Isla%20de%20Pascua-Easter%20Island_CH_4MAR03_Alvaro%20Jaramillo.mp3","https://www.xeno-canto.org/sounds/uploaded/XAMHIHFTZG/XC331138-call1.mp3","https://www.xeno-canto.org/sounds/uploaded/OOECIWCSWV/XC449827-LS100829%20King%20Penguin%20call%20A.mp3","https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC501190-190801_06.50h_zilvermeeuw_duinen%20van%20goeree_roep_2ex_overvliegend_gezien_.mp3"]],"VariableBirds":[["Ворон","Журавль","Ласточка","Козодой","Кукушка","Синица"],["Воробей","Грач","Галка","Певчий дрозд","Сорока","Сойка"],["Зяблик","Клёст","Горлица","Дятел","Удод","Стриж"],["Жаворонок","Соловей","Скворец","Иволга","Свиристель","Щегол"],["Oрёл","Коршун","Лунь","Сокол","Ястреб","Филин"],["Альбатрос","Олуша","Буревестник","Пеликан","Пингвин","Чайка"]],"Image":[["https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg","https://live.staticflickr.com/65535/49221158846_b0b69a58f1.jpg","https://live.staticflickr.com//65535//48539007512_5029d2a9a0.jpg","https://live.staticflickr.com/65535/48456345286_dbc8530027.jpg","https://live.staticflickr.com/65535/48377838151_e15f430ec1.jpg","https://live.staticflickr.com//65535//49366042493_c48c81d58d.jpg"],["https://live.staticflickr.com//65535//49366595303_06cf65b07e.jpg","https://live.staticflickr.com//65535//49347123322_291c86b016.jpg","https://live.staticflickr.com//65535//49237149586_993cf685c5.jpg","https://live.staticflickr.com/65535/48979125763_e2534f54bd.jpg","https://live.staticflickr.com//65535//49360363066_ff02bb6a73.jpg","https://live.staticflickr.com//65535//49369678956_9a7465c7f4.jpg"],["https://live.staticflickr.com/65535/49143150817_2d3a2f6c1e.jpg","https://live.staticflickr.com//65535//49365470123_f2de66bb35.jpg","https://live.staticflickr.com/65535/48063004977_84252f9ceb.jpg","https://live.staticflickr.com/65535/49339376578_e933426455.jpg","https://live.staticflickr.com//65535//49226383598_6f8be86a06.jpg","https://live.staticflickr.com//65535//48386150031_7b749df74b.jpg"],["https://live.staticflickr.com/65535/47105096764_f751fba568.jpg","https://live.staticflickr.com/7605/27669397735_f3c21758f2.jpg","https://live.staticflickr.com/65535/49357593971_9509fe1d7c.jpg","https://live.staticflickr.com/65535/47102184004_58a93380b9.jpg","https://live.staticflickr.com//65535//49367433842_1b06da0e6b.jpg","https://live.staticflickr.com//65535//49366257253_db3ce48b9a.jpg"],["https://live.staticflickr.com//4835//43867392960_7105d71e19.jpg","https://live.staticflickr.com//65535//48701190276_ee2a9ed594.jpg","https://live.staticflickr.com/65535/49322743903_32f3922d9e.jpg","https://live.staticflickr.com//65535//49310710607_92a3a145a9.jpg","https://live.staticflickr.com//65535//49024617331_b9d0d2c9b3.jpg","https://live.staticflickr.com/65535/48137123012_393653c2e4.jpg"],["https://live.staticflickr.com/7557/16260253965_8e9430cb66.jpg","https://live.staticflickr.com/800/40645471394_4422e69ed8.jpg","https://live.staticflickr.com//607//22136056020_935cb113f9.jpg","http://www.ebirds.ru/images/e/11.jpg","https://live.staticflickr.com/5202/5252413926_8e013a3efd.jpg","https://live.staticflickr.com/65535/48577115317_7034201dde.jpg"]],"Lat":[["Corvus corax","Grus grus","Coturnix coturnix","Caprimulgus europaeus","Cuculus canorus","Parus major"],["Passer domesticus","Corvus frugilegus","Coloeus monedula","Turdus philomelos","Pica pica","Garrulus glandarius"],["Fringilla coelebs","Loxia curvirostra","Streptopelia turtur","Dendrocopos major","Upupa epops","Apus apus"],["Alauda arvensis","Luscinia luscinia","Sturnus vulgaris","Oriolus oriolus","Bombycilla garrulus","Carduelis carduelis"],["Aquila nipalensis","Milvus migrans","Circus cyaneus","Falco peregrinus","Accipiter gentilis","Bubo bubo"],["Diomedea exulans","Sula nebouxii","Puffinus griseus","Pelecanus","Aptenodytes forsteri","Larus argentatus"]],"InfoBirds":[["Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра, монархия рухнет.","Звуки, издаваемые журавлем, похожи на звонкое «кур-лы – кур-лы». Журавли чаще всего поют дуэтом – одна птица начинает запев со слога «кур», а вторая подхватывает «лы». Если птица поёт одна, то она издает только звук «кур».","Для ласточек характерно негромкое щебетание. Песни ласточек не смолкают на протяжении всего лета. Исследователи различают у птиц до 6 щебечущих звуков: «вит», «ви-вит», «чивит», «чиривит» и т.п. Ласточки любят петь дуэтом.","Козодой – неприметная птица, известная благодаря своему голосу. Песня козодоя звучит как монотонная трель похожая на тарахтение мотоцикла. Такое дребезжание слышно от заката до рассвета, его тональность, частота и громкость изменяются.","Кукушку назвали так из-за особенностей ее песен. Звонкое «ку-ку» не спутать ни с какой другой птицей. Кукушки не строят гнезда, их потомство выращивают другие виды пернатых, которым кукушки подбрасывают свои яйца.","В щебетании синиц различают более 40 различных звуковых сочетаний. Поют они практически круглый год, немного затихая только зимой. Синицы настоящие санитары леса. Одна пара синиц в период гнездования оберегает от вредителей десятки деревьев."],["Воробьи являются самыми известными и узнаваемыми пернатыми. Их легко узнать по пестрому оперению и задорному чириканью. Воробьи относятся к синатропному виду — они селятся поблизости к человеческому жилищу.","Грачи очень умные и сообразительные птицы. С помощью клюва они создают и используют простейшие орудия. У грачей развит рефлекс на звуки трактора. Услышав «тарахтение», они летят на звук – трактор пашет землю, значит, в этом месте много корма.","Слово «галка» произошло из старославянского языка и переводится как «чёрный». Этим словом часто называют воронов или других черных птиц. Латинское название галки «monedula» связывают со словами монета за любовь птицы к блестящим и ярким вещам.","Дрозд — лучший певец из отряда воробьиных. Песня состоит только из красивых звучных свистов и коротких трелей. Чаще всего её можно услышать в утреннее и вечернее время. Поют дрозды в течении всего периода гнездования.","Сорока очень трудолюбивая птица. Она строит до восьми гнёзд, а потом выбирает из них самое лучшее. Вход в гнездо сорок всегда обращен на юг, чтобы в жилище было теплее. Сороки являются единственными птицами, которые узнают себя в зеркале.","Когда сойка волнуется, хохолок на её голове взъерошивается. Птица старается создать устрашающее зрелище. Сойки умеют имитировать голоса других птиц, животных и звуки, которые создает человек. На зиму они делают большие запасы желудей и орехов."],["В дикой природе насчитывается 450 видов зябликов. Зимой зяблики ведут стайный образ жизни. Иногда в их семьях можно увидеть воробьев. Запевают зяблики весной, с наступлением брачного периода. Их пение – это заливистые многоминутные рулады.","Клестов называют «рождественскими» птицами. В естественных условиях они дают потомство зимой – в январе. Эти птицы утепляют свои гнезда мхом и шерстью животных, потому птенцам не холодно. В поисках шишек клесты могут улетать за 3500 км от гнезда.","Горлица обитает в смешанных и широколиственных лесах, а также в городских парках и поселках. Птицы часто выбирают места жизни рядом с человеком и легко привыкают к людям. Благодаря мелодичному приятному пению горлиц часто разводят в домашних условиях.","Дятел – заметная и шумная птица, часто живет рядом с человеком. С середины января до конца июня можно услышать «барабанную дробь» дятлов – трель от вибрации веток под быстрыми ударами клюва птицы. В хорошую погоду дробь слышна в радиусе 1,5 км.","Удоды предпочитают жить на открытых ландшафтах с отдельными деревьями или рощами. Наиболее удобными для птицы являются лесостепь и саванна. Удод может выбирать места жительства рядом с человеком: пастбища, виноградники, фруктовые сады.","Стрижа можно увидеть практически в каждом уголке планеты. Они обитают как в лесных зонах, так и на открытых местностях. Живут стрижи крупными стаями. Большие колонии этих птиц можно увидеть в городах или на прибрежных скалах."],["Жаворонки — перелетные птицы. С начала сентября они отлетают на юг. Возвращаются они в начале марта, независимо от того, сошел снег или нет. По прилету жаворонков определяли наступление весны и пору, когда пора пахать землю.","Соловьи поют с начала мая и до конца лета. Каждая песня соловья состоит из 12 повторяющихся элементов, которые еще называют коленами. Кроме собственных трелей, соловьи легко и хорошо перенимают пение других птиц.","Скворцы - перелётные птицы. Синхронный перелет больших стай скворцов называется мурмурацией. Это красивое и завораживающее явление – множество птиц будто танцуют в воздухе, образуя замысловатые фигуры, которые уменьшаются и увеличиваются в небе.","Мелодичность голоса иволги сравнивают со звучанием флейты. Человеку сложно разглядеть иволгу, так как она обитает высоко на деревьях. Иволга не только очень красивая, но и  полезная птица. Она уничтожает ядовитых гусениц, которых не поедают другие птицы.","У свиристели очень цепкие коготки, что помогает птице удерживаться на ветках и склевывать ягоды, которые труднее всего достать. В период ухаживаний самец предлагает самке ягоду или другое угощение. Если самка его принимает, то птицы создают пару.","Щеглы поют красиво и мелодично. И в природе, и в неволе они щебечут почти круглый год. В пении щегла различают более 20 переливчатых трелей. Щеглы привыкают к людям, и даже могут возвратиться к хозяину после того, как их выпустили на волю"],["В древние времена орел был символом солнца. Орлы часто парят над землей, при этом скорость их перемещения может достигать 240 км/ч. Иллюзия медленного движения происходит из-за высоты полета – более 700 метров","Коршуны – крупные хищники, в высоту они достигают около полуметра, а вес взрослых особей достигает 1 кг. Крылья узкие и длинные, их размах составляет 1,5 м. Коршуны часто гнездятся большими стаями и даже образуют крупные колонии.","Лунь – это небольшой сокол. Питается в основном мышевидными грызунами, основа его рациона – полёвки, хомяки, мыши. Оперение луня может быть пепельно-серым. С такой птицей связано сравнение «седой, как лунь».","Латинское название сокола Falco произошло от слова «серп» из-за серповидной формы крыльев. Длинные и широкие крылья позволяют соколу высоко подниматься в небо и свободно парить. Скорость полёта сокола достигает 280-320 километров в час.","Для всех ястребов характерны широкие и короткие крылья. Ещё один отличительный признак - белые «брови» над глазами. Славянские дружинники размещали изображение ястреба на своих знаменах, как символ отваги, мощи и безжалостности к врагам.","Полет филина бесшумный, зрение очень острое. Эти особенности делают птицу непревзойденным ночным охотником. У филина нет естественных врагов, ни один зверь не охотится на взрослых птиц. А вот на птенцов нападают лисы и волки."],["Альбатрос - самая крупная летающая птица в мире. Размах крыльев достигает три с половиной, вес - десять килограммов. Большую часть жизни альбатросы проводят в воздухе, покрывая над океанскими просторами огромные расстояния","Особенностью голубоногой олуши является не только насыщенный ярко-синий цвет лапок, но еще и тот факт, что они очень теплые. В то время как другие виды птиц греют кладки своим телом, голубоногая олуша делает это с помощью лапок","Размеры буревестниковых разные. Самые маленькие из них в длину составляют до 25 см, самые большие - до 1 м, при размахе крыльев около 2 м. Существует поверье, что появление буревестника в воздухе предвещает бурю, о чем говорит само название птицы.","Пеликаны — обитатели морей и рек. Ходят они неуклюже, но хорошо летают и плавают. Питаются в основном рыбой, устраивают коллективные охоты — выстроившись полукругом хлопают по воде крыльями и клювами и вытесняют напуганную рыбу на мелководье.","Самец императорского пингвина достигает роста 130 см, его масса может приближаться к 50 кг. Из всех современных пингвинов этот вид – самый крупный. Питание пингвина состоит из рыбы, кальмаров и криля. Охотятся птицы в океане большими группами.","Чайки населяют берега морей, озёр, рек, водохранилищ, болот, часто гнездятся на островах. С конца прошлого века чайки стали появляться в крупных городах, где устраивает гнёзда на крышах зданий. Все чайки ведут колониальный образ жизни."]]}
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports) {
+
+module.exports = {"TypeBirds":["Разминка","Воробьиные","Лесные птицы","Певчие птицы","Хищные птицы","Морские птицы"]}
+
+/***/ }),
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30786,7 +31183,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "static/media/correct_answer.0444b817.mp3");
 
 /***/ }),
-/* 39 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

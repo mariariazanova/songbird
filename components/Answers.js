@@ -4,6 +4,9 @@ import Description from './Description';
 
 import './Answers.css';
 
+//let red = [];
+//let green = [];
+
 class Answers extends React.Component {
 
     static propTypes = {
@@ -16,21 +19,72 @@ class Answers extends React.Component {
   
     state = {
       descAnswer:this.props.descAnswer,
-      rand: this.props.rand
+      guessed: this.props.guessed,
+      countWrong: 0,
+      backgroundColor: ["#444","#444","#444","#444","#444","#444"]
     };
 
+    
+    componentWillReceiveProps = (newProps) => { 
+      console.log("Answer componentWillReceiveProps");
+      if (newProps.newLevel) {
+            this.setState({descAnswer:newProps.descAnswer,
+                           guessed:false,
+                           countWrong:0,
+                           backgroundColor: ["#444","#444","#444","#444","#444","#444"],
+                           newLevel:false
+            });
+            
+            //this.props.cbReturnNextLevel();
+          } else null;
+    }
 
+    //componentDidUpdate = () => { 
+    //  if (this.state.newLevel) {
+    //    this.setState({newLevel:false});
+    //  }
+    //}
+  
+   //componentDidUpdate = () => { 
+    //  if (this.state.newLevel) {
+     //   this.props.cbReturnNextLevel();
+    //  }
+    //}
+  
+
+  
     onItemClick = (EO) => {
       console.log(EO.target);
       console.log(EO.target.id);
-      //this.setState({ descAnswer: Number(EO.target.id) //[this.props.clrBtn][this.props.rand]
-      // });
+      //EO.preventDefault;
+      //this.props.descAnswer2(EO.target.id);
+      this.setState({ descAnswer: Number(EO.target.id)});
+
+      
+      let newColors=[...this.state.backgroundColor]; // копия массива цветов
+      newColors[EO.target.id] = "green";
+
+      let newColors2=[...this.state.backgroundColor]; // копия массива цветов
+      newColors2[EO.target.id] = "red";
+      
+
+
 
       (Number(EO.target.id) == this.props.rand) 
-       ?  (EO.target.firstChild.className="li-btn green",
-          document.getElementById("correct_answer").play())
-       : (EO.target.firstChild.className="li-btn red" ,
-        document.getElementById("incorrect_answer").play())
+       ?  //EO.target.firstChild.className="li-btn green",
+                    
+         //(EO.target.firstChild.style.backgroundColor="green",
+         (document.getElementById("correct_answer").play(),
+        
+          this.setState({guessed:true,backgroundColor: newColors }),
+          this.props.cbChooseCorrectAnswer(this.state.countWrong)) //кол-бэк в Header
+       : (!this.state.guessed)
+          ? //(EO.target.firstChild.className="li-btn red" ,
+          //(EO.target.firstChild.style.backgroundColor="red",
+            (document.getElementById("incorrect_answer").play(),
+            this.setState({countWrong: this.state.countWrong +1, backgroundColor: newColors2}))
+         : null
+         
        
     };
 
@@ -39,27 +93,15 @@ class Answers extends React.Component {
     render() {
     
         const answersList = this.props.variableBirds[this.props.clrBtn].map((item, index) => (
-            <li key={index} id={index} className="answers-list-item" onClick={this.onItemClick} > 
-              <span className="li-btn"
-              //{
-                  //(!this.state.descAnswer)
-                  //? "li-btn"
-                  //: (this.state.descAnswer && (this.state.descAnswer == this.props.rand) )
-                  //  ? "li-btn green"
-                  //  : "li-btn red"
-                      
-
-              //}
-              
+            <li key={index} id={index} className="answers-list-item"  onClick={this.onItemClick} > 
+              <span className="li-btn" 
+              style={{backgroundColor: this.state.backgroundColor[index]}}
               ></span>
               {/*<a href="/#" id={index} className="">{item}</a>*/}
               {item}
             </li>
-  
-                
         ));
      
-  
       return (
         //<React.Fragment> 
         <div className="answers-block"> 
@@ -68,8 +110,18 @@ class Answers extends React.Component {
               {answersList}
             </ul> 
           </div>
-          <Description />
-          <button className="next-btn">Next level</button>
+          <Description descAnswer={this.state.descAnswer} 
+                       variableBirds= {this.props.variableBirds}
+                       clrBtn={this.props.clrBtn}
+                       sound={this.props.sound}
+                       oneBird={this.props.description} 
+                       image={this.props.image}
+                       rand={this.props.rand}
+                       info={this.props.info}
+                       lat={this.props.lat}
+                       newLevel={this.props.newLevel}
+                        />
+          {/*<button className="next-btn">Next level</button>*/}
         </div>
         //</React.Fragment>             
               

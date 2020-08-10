@@ -20,7 +20,7 @@
     background-clip: border-box;
     border-radius: 0.25rem;
 }
-.task-instruction {
+.description-block .task-instruction {
     margin-top: 0;
     margin-bottom: 1rem;
 
@@ -28,4 +28,115 @@
 
 .task-instruction span {
     display: block;
+}
+.description-block .card-body {
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+    min-height: 173px;
+}
+
+.description-block .bird-image {
+    width: 200px;
+    height: 155px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 2rem;
+}
+
+.description-block ul.list-group-card {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    width: calc(100% - 240px);
+}
+
+
+.description-block ul.list-group-card li {
+    list-style-type: none;
+    border-bottom: solid 1px #555555;
+}
+ 
+.description-block ul.list-group-card li:last-child {
+    border-bottom: none;
+}
+
+.description-block ul.list-group-card h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+
+}
+
+.description-block ul.list-group-card .audio-player {
+    margin: 10px 40px 8px 0;
+    width: 100%;
+    min-width: 100px;
+}
+.description-block ul.list-group-card .controls {
+    display: flex;
+    align-items: center;
+
+}
+.description-block ul.list-group-card .timebar {
+    position: relative;
+    flex: 1 1;
+    margin-top: 12px;
+}
+.description-block ul.list-group-card #playback-button2 {
+    transition: .2s;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #00bc8c;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.description-block ul.list-group-card .playing div{
+    width: 12px;
+    height: 14px;
+    border-right: 4px solid #00bc8c;
+    border-left: 4px solid #00bc8c;
+}
+
+.description-block ul.list-group-card .paused div{
+    border-width: 8px 0 8px 12px;
+    border-color: transparent transparent transparent #00bc8c;
+    border-style: solid;
+}
+
+.description-block ul.list-group-card .timebar .timebar-bar {
+    height: 4px;
+   
+}
+
+.description-block ul.list-group-card .timebar .timebar-circle {
+    background-color: grey;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    transform: translate(-50%,calc(-50% + 2px));
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.2);
+    cursor: pointer;
+
+}
+.description-block ul.list-group-card .timebar-time-info {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #d3d3d3;
+    display: flex;
+    justify-content: space-between;
+}
+.description-block .bird-description {
+    display: flex;
+
 }

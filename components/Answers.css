@@ -49,7 +49,7 @@ t.answers-list-item+.answers-list-item {
     display: inline-block;
     width: 10px;
     height: 10px;
-    background-color: #444;
+    /*background-color: #444;*/
     margin-right: 15px;
     border-radius: 50%;
     transition: .1s;
@@ -60,11 +60,11 @@ t.answers-list-item+.answers-list-item {
     background-color: #444;
 }
 
-.answers-list .answers-list-item .red {
-    background-color: red !important;
+.answers-list .answers-list-item span.red {
+    background-color: red ;
 }
-.answers-list .answers-list-item .green {
-    background-color: green !important;
+.answers-list .answers-list-item .span.green {
+    background-color: green ;
 }
 
 
