@@ -22,7 +22,8 @@ class Description extends React.Component {
       var audioDuration = document.getElementById("audio2").duration;
       this.setState({
         audioDuration: audioDuration,
-        currentAudioTime: 0
+        currentAudioTime: 0,
+        distance: 0
       });
   }
   startPlayMusic = (EO) => {

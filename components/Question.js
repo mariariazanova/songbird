@@ -119,7 +119,7 @@ class Question extends React.Component {
     render() {
     
      let dist = this.state.distance + '%';
-               
+     console.log("Правильный ответ №" +(this.props.rand+1));         
       return (
         //<React.Fragment> 
         <div className="question-panel">

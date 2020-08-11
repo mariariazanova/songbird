@@ -75,7 +75,7 @@ class Answers extends React.Component {
                     
          //(EO.target.firstChild.style.backgroundColor="green",
          (document.getElementById("correct_answer").play(),
-        
+          document.getElementById("audio").pause(),
           this.setState({guessed:true,backgroundColor: newColors }),
           this.props.cbChooseCorrectAnswer(this.state.countWrong)) //кол-бэк в Header
        : (!this.state.guessed)
@@ -91,7 +91,7 @@ class Answers extends React.Component {
     
 
     render() {
-    
+     
         const answersList = this.props.variableBirds[this.props.clrBtn].map((item, index) => (
             <li key={index} id={index} className="answers-list-item"  onClick={this.onItemClick} > 
               <span className="li-btn" 
@@ -103,6 +103,7 @@ class Answers extends React.Component {
         ));
      
       return (
+          
         //<React.Fragment> 
         <div className="answers-block"> 
           <div className="anwers-block-variants">

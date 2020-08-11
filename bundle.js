@@ -698,7 +698,7 @@ var Question = function (_React$Component) {
         value: function render() {
 
             var dist = this.state.distance + '%';
-
+            console.log("Правильный ответ №" + (this.props.rand + 1));
             return (
                 //<React.Fragment> 
                 _react2.default.createElement(
@@ -838,7 +838,8 @@ var Description = function (_React$Component) {
             var audioDuration = document.getElementById("audio2").duration;
             _this.setState({
                 audioDuration: audioDuration,
-                currentAudioTime: 0
+                currentAudioTime: 0,
+                distance: 0
             });
         }, _this.startPlayMusic = function (EO) {
             var audio = document.getElementById("audio2");
@@ -30968,7 +30969,7 @@ var Answers = function (_React$Component) {
       Number(EO.target.id) == _this.props.rand ? ( //EO.target.firstChild.className="li-btn green",
 
       //(EO.target.firstChild.style.backgroundColor="green",
-      document.getElementById("correct_answer").play(), _this.setState({ guessed: true, backgroundColor: newColors }), _this.props.cbChooseCorrectAnswer(_this.state.countWrong) //кол-бэк в Header
+      document.getElementById("correct_answer").play(), document.getElementById("audio").pause(), _this.setState({ guessed: true, backgroundColor: newColors }), _this.props.cbChooseCorrectAnswer(_this.state.countWrong) //кол-бэк в Header
       ) : !_this.state.guessed ? ( //(EO.target.firstChild.className="li-btn red" ,
       //(EO.target.firstChild.style.backgroundColor="red",
       document.getElementById("incorrect_answer").play(), _this.setState({ countWrong: _this.state.countWrong + 1, backgroundColor: newColors2 })) : null;
@@ -31005,6 +31006,7 @@ var Answers = function (_React$Component) {
       });
 
       return (
+
         //<React.Fragment> 
         _react2.default.createElement(
           'div',
