@@ -76,6 +76,12 @@ class Answers extends React.Component {
          //(EO.target.firstChild.style.backgroundColor="green",
          (document.getElementById("correct_answer").play(),
           document.getElementById("audio").pause(),
+
+          document.getElementById("playback-button").classList.add('paused'),
+          document.getElementById("playback-button").classList.remove('playing'),
+          //clearInterval(this.interval),
+
+
           this.setState({guessed:true,backgroundColor: newColors }),
           this.props.cbChooseCorrectAnswer(this.state.countWrong)) //кол-бэк в Header
        : (!this.state.guessed)

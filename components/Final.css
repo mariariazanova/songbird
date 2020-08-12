@@ -51,3 +51,12 @@
     display: block;
     margin: 10px auto;
 }
+
+@media (max-width: 768px)  {
+    .final h1 {
+        font-size: 3rem;
+    }
+    .final img.firework {
+        width: 100%;
+    }
+}

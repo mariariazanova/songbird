@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Question.css';
 import img from '../images/bird.jpg';
+import img_volume from '../images/sound1.png';
 
 var svg_playback =[];
 
@@ -116,6 +117,22 @@ class Question extends React.Component {
      
     }    
     */
+
+    soundChange = (EO) => {
+        var audio = document.getElementById("audio");
+        var volume = EO.target.value;
+        console.log(volume);
+        audio.volume = volume;
+
+        //var volumeScale = document.getElementById('volume-control');
+        //volumeScale.style.background = "red";
+    
+        //var volume = volumeScale.value / 100;
+        //var audio = document.getElementById("audio");
+        //audio.volume = volume;
+        
+    }
+
     render() {
     
      let dist = this.state.distance + '%';
@@ -147,7 +164,6 @@ class Question extends React.Component {
                         <div className="controls">
                             <div id="playback-button" className="playback-button paused" onClick={this.startPlayMusic}>
                             <div></div>
-                           
                             </div>
                             <div className="timebar" id="timebar" >
                                 <div className="timebar-bar" style={{backgroundImage: 'linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140)'+dist+', rgb(115, 115, 115)'+dist+', rgb(115, 115, 115) 100%)'}}
@@ -157,6 +173,15 @@ class Question extends React.Component {
                                     <div>{this.setTime(this.state.currentAudioTime)}</div>
                                     <div>{this.setTime(this.state.audioDuration)}</div>
                                 </div>
+                            </div>
+                            
+                            <div id="volume_control">
+                                    <label id="rngVolume_label" >
+                                    <input type="range" id="rngVolume" min="0" max="1" 
+                                           step="0.01" defaultValue="0.5" 
+                                           onChange={this.soundChange}/>
+                                    
+                                    </label>
                             </div>
                         </div>    
                     </div>

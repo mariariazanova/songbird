@@ -18,7 +18,7 @@ class Description extends React.Component {
   }
 
   
-    onLoadedMetadata = () => {
+  onLoadedMetadata = () => {
       var audioDuration = document.getElementById("audio2").duration;
       this.setState({
         audioDuration: audioDuration,

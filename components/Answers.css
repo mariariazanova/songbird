@@ -91,3 +91,20 @@ t.answers-list-item+.answers-list-item {
     border-radius: 0.25rem;
     cursor: pointer;
 }
+
+@media  (max-width: 768px)  {
+    .answers-block {
+    flex-flow: column;
+    }
+    .anwers-block-variants {
+        display: flex;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .description-block {
+        display: flex;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 40px;
+    }
+}

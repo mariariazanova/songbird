@@ -62,6 +62,14 @@ class Quiz extends React.Component {
         });    
     }; 
 
+    startAgain = () => {
+        this.setState({
+            clrBtn: 0,
+            score: 0,
+
+        });
+    };
+
     /*returnNextLevel = (EO) => {
         this.setState({
             newLevel: false,
@@ -100,6 +108,7 @@ class Quiz extends React.Component {
                         clrBtn={this.state.clrBtn} 
                 /> 
                 <Final score={this.state.score}
+                       cbNewRound={this.startAgain} 
                 />
             </React.Fragment> 
           )

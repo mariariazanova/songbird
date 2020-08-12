@@ -6,8 +6,13 @@ import './Final.css';
 class Final extends React.Component {
 
     static propTypes = {
-        
+        score: PropTypes.number,
+        cbNewRound: PropTypes.func.isRequired,
     };
+
+    newRound = (EO) => {
+        this.props.cbNewRound(); 
+    }   
   
     render() {
 
@@ -27,7 +32,7 @@ class Final extends React.Component {
                 <h1>Поздравляем!</h1>
                 <p>Вы прошли викторину и набрали {this.props.score} из 30 возможных баллов.</p>
                 <hr className="hr" />
-                <button className="btn-final">Попробовать еще раз!</button>   
+                <button className="btn-final" onClick={this.newRound}>Попробовать еще раз!</button>   
                     
             </div>
         )}  
