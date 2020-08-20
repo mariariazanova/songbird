@@ -351,7 +351,7 @@ input[type=range]::range-progress {
     flex-direction: column;
     min-width: 0;
     position: relative;
-    padding: 1rem;
+    padding: 0.85rem 1rem;
     border: 1px solid #444;
     width: 100%;
     background-color: #303030;
@@ -506,7 +506,7 @@ input[type=range]::range-progress {
 .answers-list-item {
     position: relative;
     display: block;
-    padding: .85rem 1.25rem;
+    padding: 1rem 1.25rem;
     background-color: #303030;
     border: 1px solid #555;
     cursor: pointer;

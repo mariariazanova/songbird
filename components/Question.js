@@ -22,18 +22,16 @@ class Question extends React.Component {
 
     }
 
-    //componentDidUpdate(prevProps, prevState, snapshot) {
-    //    if (prevProps.src!==this.props.src) {
-    //      this.pause();
-    //      this.setState({
-    //        distance: 0
-    //      })
-    //    }
-    //}
+    
+    componentWillUnmount() {
+        clearInterval(this.interval);
+        //this.interval=0;
+        document.getElementById("audio").currentTime =0;
+    }
 
     startPlayMusic = (EO) => {
         var audio = document.getElementById("audio");
-        console.log(audio);
+        //console.log(audio);
         if (audio.paused) {
             audio.play();
             this.play();
@@ -51,7 +49,7 @@ class Question extends React.Component {
         
         this.interval = setInterval(() => {
             var currentAudioTime = document.getElementById("audio").currentTime;
-            //console.log(currentAudioTime);
+          
             this.setState({
                 currentAudioTime: currentAudioTime,
                 distance: currentAudioTime / this.state.audioDuration * 100
@@ -136,7 +134,7 @@ class Question extends React.Component {
     render() {
     
      let dist = this.state.distance + '%';
-     console.log("Правильный ответ №" +(this.props.rand+1));         
+     //console.log("Правильный ответ №" +(this.props.rand+1));         
       return (
         //<React.Fragment> 
         <div className="question-panel">

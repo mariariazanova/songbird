@@ -28,7 +28,7 @@ class Description extends React.Component {
   }
   startPlayMusic = (EO) => {
     var audio = document.getElementById("audio2");
-    console.log(audio);
+    //console.log(audio);
     if (audio.paused) {
         audio.play();
         this.play();

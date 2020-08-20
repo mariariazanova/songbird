@@ -26,7 +26,7 @@ class Answers extends React.Component {
 
     
     componentWillReceiveProps = (newProps) => { 
-      console.log("Answer componentWillReceiveProps");
+     
       if (newProps.newLevel) {
             this.setState({descAnswer:newProps.descAnswer,
                            guessed:false,
@@ -38,24 +38,11 @@ class Answers extends React.Component {
             //this.props.cbReturnNextLevel();
           } else null;
     }
-
-    //componentDidUpdate = () => { 
-    //  if (this.state.newLevel) {
-    //    this.setState({newLevel:false});
-    //  }
-    //}
   
-   //componentDidUpdate = () => { 
-    //  if (this.state.newLevel) {
-     //   this.props.cbReturnNextLevel();
-    //  }
-    //}
-  
-
   
     onItemClick = (EO) => {
-      console.log(EO.target);
-      console.log(EO.target.id);
+      //console.log(EO.target);
+      //console.log(EO.target.id);
       //EO.preventDefault;
       //this.props.descAnswer2(EO.target.id);
       this.setState({ descAnswer: Number(EO.target.id)});
@@ -107,6 +94,7 @@ class Answers extends React.Component {
               {item}
             </li>
         ));
+        console.log("Правильный ответ №" +(this.props.rand+1)); 
      
       return (
           

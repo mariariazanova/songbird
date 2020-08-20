@@ -27,7 +27,7 @@
 .answers-list-item {
     position: relative;
     display: block;
-    padding: .85rem 1.25rem;
+    padding: 1rem 1.25rem;
     background-color: #303030;
     border: 1px solid #555;
     cursor: pointer;
