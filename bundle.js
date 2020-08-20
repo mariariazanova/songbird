@@ -627,16 +627,36 @@ var Question = function (_React$Component) {
             playerButton.classList.remove("paused");
 
             _this.interval = setInterval(function () {
-                var currentAudioTime = document.getElementById("audio").currentTime;
+                if (document.getElementById("audio")) {
+                    var currentAudioTime = document.getElementById("audio").currentTime;
 
-                _this.setState({
-                    currentAudioTime: currentAudioTime,
-                    distance: currentAudioTime / _this.state.audioDuration * 100
-                });
-                if (currentAudioTime === _this.state.audioDuration) {
-                    _this.pause();
+                    _this.setState({
+                        currentAudioTime: currentAudioTime,
+                        distance: currentAudioTime / _this.state.audioDuration * 100
+                    });
+                    if (currentAudioTime === _this.state.audioDuration) {
+                        _this.pause();
+                    }
+                } else {
+                    null;
                 }
             }, 100);
+
+            /*
+                    this.interval = setInterval(() => {
+                        if (document.getElementById("audio"))
+                        {var currentAudioTime = document.getElementById("audio").currentTime;}
+                        else {null}
+                      
+                        this.setState({
+                            currentAudioTime: currentAudioTime,
+                            distance: currentAudioTime / this.state.audioDuration * 100
+                        });  
+                        if(currentAudioTime === this.state.audioDuration){
+                            this.pause();
+                        }    
+                        }, 100);
+            */
         }, _this.pause = function () {
             var playerButton = document.getElementById("playback-button");
             playerButton.classList.add('paused');
@@ -679,9 +699,10 @@ var Question = function (_React$Component) {
     _createClass(Question, [{
         key: 'componentWillUnmount',
         value: function componentWillUnmount() {
+            console.log("CWU");
             clearInterval(this.interval);
             //this.interval=0;
-            document.getElementById("audio").currentTime = 0;
+            //document.getElementById("audio").currentTime =0;
         }
         //перемотка аудио - пока не работает
         /*audioChangeTime = (EO) => { 

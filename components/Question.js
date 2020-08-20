@@ -24,9 +24,10 @@ class Question extends React.Component {
 
     
     componentWillUnmount() {
+        console.log("CWU");
         clearInterval(this.interval);
         //this.interval=0;
-        document.getElementById("audio").currentTime =0;
+        //document.getElementById("audio").currentTime =0;
     }
 
     startPlayMusic = (EO) => {
@@ -48,7 +49,27 @@ class Question extends React.Component {
         playerButton.classList.remove("paused");
         
         this.interval = setInterval(() => {
-            var currentAudioTime = document.getElementById("audio").currentTime;
+            if (document.getElementById("audio"))
+            {var currentAudioTime = document.getElementById("audio").currentTime;
+           
+          
+            this.setState({
+                currentAudioTime: currentAudioTime,
+                distance: currentAudioTime / this.state.audioDuration * 100
+            });  
+            if(currentAudioTime === this.state.audioDuration){
+                this.pause();
+            } 
+        }
+        else {null}   
+            }, 100);
+
+
+/*
+        this.interval = setInterval(() => {
+            if (document.getElementById("audio"))
+            {var currentAudioTime = document.getElementById("audio").currentTime;}
+            else {null}
           
             this.setState({
                 currentAudioTime: currentAudioTime,
@@ -58,7 +79,7 @@ class Question extends React.Component {
                 this.pause();
             }    
             }, 100);
-             
+*/            
         
     }
      
