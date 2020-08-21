@@ -60,9 +60,9 @@ class Question extends React.Component {
             if(currentAudioTime === this.state.audioDuration){
                 this.pause();
             } 
-        }
-        else {null}   
-            }, 100);
+           }
+           else {null}   
+        }, 100);
 
 
 /*
