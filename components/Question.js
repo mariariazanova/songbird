@@ -22,10 +22,19 @@ class Question extends React.Component {
 
     }
 
+    constructor() {
+        super();
+        this._isMounted = false;
+    }
+
+    componentDidMount() {
+        this._isMounted = true;
+    }    
     
     componentWillUnmount() {
         console.log("CWU");
         clearInterval(this.interval);
+        this._isMounted = false;
         //this.interval=0;
         //document.getElementById("audio").currentTime =0;
     }
@@ -49,7 +58,7 @@ class Question extends React.Component {
         playerButton.classList.remove("paused");
         
         this.interval = setInterval(() => {
-            if (document.getElementById("audio"))
+            if (document.getElementById("audio")&& (this._isMounted))
             {var currentAudioTime = document.getElementById("audio").currentTime;
            
           
@@ -140,16 +149,7 @@ class Question extends React.Component {
     soundChange = (EO) => {
         var audio = document.getElementById("audio");
         var volume = EO.target.value;
-        console.log(volume);
         audio.volume = volume;
-
-        //var volumeScale = document.getElementById('volume-control');
-        //volumeScale.style.background = "red";
-    
-        //var volume = volumeScale.value / 100;
-        //var audio = document.getElementById("audio");
-        //audio.volume = volume;
-        
     }
 
     render() {
@@ -194,15 +194,15 @@ class Question extends React.Component {
                                 </div>
                             </div>
                             
-                            <div id="volume_control">
-                                    <label id="rngVolume_label" >
-                                    <input type="range" id="rngVolume" min="0" max="1" 
-                                           step="0.01" defaultValue="0.5" 
-                                           onChange={this.soundChange}/>
-                                    
-                                    </label>
-                            </div>
+                            
                         </div>    
+                    </div>
+                    <div id="volume_control">
+                            <label id="rngVolume_label" >
+                                <input type="range" id="rngVolume" min="0" max="1" 
+                                           step="0.01" defaultValue="0.3" 
+                                           onChange={this.soundChange}/>
+                            </label>
                     </div>
                 </li>
             </ul> 

@@ -285,23 +285,32 @@ h3 {
 }
 
 #volume_control {
-    width: 70px;
+    display:flex;
+    justify-content: flex-end;
+    /*width: 70px;*/
     margin:-8px 0 0 8px;
 }
 label#rngVolume_label {
     font-size: 12px;
-    margin-top:-8px;
+    margin-top:-1px;
     line-height: 10px;
 
 }
 
 #rngVolume {
     width:70px;
+    
 }
 
-input[type=range]::range-progress {
+input[type=range]::range-progress  {
     background-color: #00bc8c;
 }
+
+#volume_img {
+    width:20px;
+   
+}
+
 
 
 
@@ -321,8 +330,8 @@ input[type=range]::range-progress {
 }
 @media  (max-width: 350px)  {
     .bird-image {
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        height: 80%;
     }
     .controls {
         flex-direction: column;
@@ -357,6 +366,8 @@ input[type=range]::range-progress {
     background-color: #303030;
     background-clip: border-box;
     border-radius: 0.25rem;
+    height:336px;
+    overflow-y: auto;
 }
 .description-block .task-instruction {
     margin-top: 0;
@@ -394,6 +405,7 @@ input[type=range]::range-progress {
 .description-block ul.list-group-card li {
     list-style-type: none;
     border-bottom: solid 1px #555555;
+    padding: .25rem;
 }
  
 .description-block ul.list-group-card li:last-child {
@@ -477,7 +489,46 @@ input[type=range]::range-progress {
 .description-block .bird-description {
     display: flex;
 
-}.answers-block {
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .description-block .card-body {
+        flex-direction: column;
+        min-height: 320px;
+    }
+    .description-block ul.list-group-card {
+        width:100%;
+    }
+    
+}
+
+@media  (max-width: 576px)  {
+    .description-block .card-body {
+        flex-direction: column;
+        min-height: 320px;
+    }
+    .description-block .bird-image {
+        margin: 0;
+    }
+    .description-block ul.list-group-card {
+        width:100%;
+    }
+
+}    
+
+@media  (max-width: 350px)  {
+    .description-block .card-body {
+        flex-direction: column;
+        min-height: 380px;
+    }
+}    
+
+@media  (max-width: 300px)  {
+    .description-block .bird-image {
+        width: 100%;
+        
+    }
+}    .answers-block {
     position: relative;
     display: flex;
     flex-wrap: wrap;

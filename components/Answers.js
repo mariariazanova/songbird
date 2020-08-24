@@ -37,14 +37,11 @@ class Answers extends React.Component {
             
             //this.props.cbReturnNextLevel();
           } else null;
-    }
+    };
   
   
     onItemClick = (EO) => {
-      //console.log(EO.target);
-      //console.log(EO.target.id);
-      //EO.preventDefault;
-      //this.props.descAnswer2(EO.target.id);
+     
       this.setState({ descAnswer: Number(EO.target.id)});
 
       
@@ -61,9 +58,10 @@ class Answers extends React.Component {
        ?  //EO.target.firstChild.className="li-btn green",
                     
          //(EO.target.firstChild.style.backgroundColor="green",
-         (document.getElementById("correct_answer").play(),
+         (document.getElementById("correct_answer").load(),
+          document.getElementById("correct_answer").play(),
           document.getElementById("audio").pause(),
-
+          
           document.getElementById("playback-button").classList.add('paused'),
           document.getElementById("playback-button").classList.remove('playing'),
           //clearInterval(this.interval),
@@ -74,8 +72,10 @@ class Answers extends React.Component {
        : (!this.state.guessed)
           ? //(EO.target.firstChild.className="li-btn red" ,
           //(EO.target.firstChild.style.backgroundColor="red",
-            (document.getElementById("incorrect_answer").play(),
-            this.setState({countWrong: this.state.countWrong +1, backgroundColor: newColors2}))
+            (document.getElementById("incorrect_answer").load(),
+            document.getElementById("incorrect_answer").play(),
+            this.setState({countWrong: this.state.countWrong +1, 
+                           backgroundColor: newColors2}))
          : null
          
        

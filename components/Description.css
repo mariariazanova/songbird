@@ -19,6 +19,8 @@
     background-color: #303030;
     background-clip: border-box;
     border-radius: 0.25rem;
+    height:336px;
+    overflow-y: auto;
 }
 .description-block .task-instruction {
     margin-top: 0;
@@ -56,6 +58,7 @@
 .description-block ul.list-group-card li {
     list-style-type: none;
     border-bottom: solid 1px #555555;
+    padding: .25rem;
 }
  
 .description-block ul.list-group-card li:last-child {
@@ -140,3 +143,42 @@
     display: flex;
 
 }
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .description-block .card-body {
+        flex-direction: column;
+        min-height: 320px;
+    }
+    .description-block ul.list-group-card {
+        width:100%;
+    }
+    
+}
+
+@media  (max-width: 576px)  {
+    .description-block .card-body {
+        flex-direction: column;
+        min-height: 320px;
+    }
+    .description-block .bird-image {
+        margin: 0;
+    }
+    .description-block ul.list-group-card {
+        width:100%;
+    }
+
+}    
+
+@media  (max-width: 350px)  {
+    .description-block .card-body {
+        flex-direction: column;
+        min-height: 380px;
+    }
+}    
+
+@media  (max-width: 300px)  {
+    .description-block .bird-image {
+        width: 100%;
+        
+    }
+}    

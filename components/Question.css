@@ -123,23 +123,32 @@ h3 {
 }
 
 #volume_control {
-    width: 70px;
+    display:flex;
+    justify-content: flex-end;
+    /*width: 70px;*/
     margin:-8px 0 0 8px;
 }
 label#rngVolume_label {
     font-size: 12px;
-    margin-top:-8px;
+    margin-top:-1px;
     line-height: 10px;
 
 }
 
 #rngVolume {
     width:70px;
+    
 }
 
-input[type=range]::range-progress {
+input[type=range]::range-progress  {
     background-color: #00bc8c;
 }
+
+#volume_img {
+    width:20px;
+   
+}
+
 
 
 
@@ -159,8 +168,8 @@ input[type=range]::range-progress {
 }
 @media  (max-width: 350px)  {
     .bird-image {
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        height: 80%;
     }
     .controls {
         flex-direction: column;
