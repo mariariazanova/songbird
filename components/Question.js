@@ -198,6 +198,7 @@ class Question extends React.Component {
                         </div>    
                     </div>
                     <div id="volume_control">
+                            <img src={img_volume} id="volume_img"/>
                             <label id="rngVolume_label" >
                                 <input type="range" id="rngVolume" min="0" max="1" 
                                            step="0.01" defaultValue="0.3" 

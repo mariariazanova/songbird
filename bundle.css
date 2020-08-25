@@ -168,7 +168,7 @@ li.page-item {
     border-radius: 0.25rem;
     
 }
-.bird-image {
+.question-panel .bird-image {
     width: 200px;
     height: 155px;
     border-radius: 10px;
@@ -181,7 +181,7 @@ li.page-item {
     width: calc(100% - 240px);
     margin: 0;
 }
-.question-panel-aside {
+.question-panel .question-panel-aside {
     margin-left: 40px;
     display: flex;
     flex-direction: column;
@@ -190,7 +190,7 @@ li.page-item {
     margin-top: 0
 
 }
-.question-panel-item {
+.question-panel .question-panel-item {
     position: relative;
     display: block;
     padding: .25rem;
@@ -198,10 +198,10 @@ li.page-item {
     border-radius: 0;
 }
 
-.question-panel-item:last-child {
+.question-panel .question-panel-item:last-child {
     border-bottom: 0;
 }
-h3 {
+.question-panel h3 {
 
     font-size: 2rem;
     font-weight: 500;
@@ -209,22 +209,22 @@ h3 {
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
-.audio-player {
+.question-panel .audio-player {
     margin: 10px 40px 8px 0;
     width: 100%;
     min-width: 100px;
 }
-.controls {
+.question-panel .controls {
     display: flex;
     align-items: center;
 
 }
-.timebar {
+.question-panel .timebar {
     position: relative;
     flex: 1 1;
     margin-top: 12px;
 }
-#playback-button {
+.question-panel #playback-button {
     transition: .2s;
     width: 40px;
     height: 40px;
@@ -237,7 +237,7 @@ h3 {
     display: flex;
     align-items: center;
 }
-#playback-button svg {
+.question-panel #playback-button svg {
     transition: .2s;
     width: 18px;
     height: 18px;
@@ -247,24 +247,24 @@ h3 {
     cursor: pointer;
 }
 
-.playing div{
+.question-panel .playing div{
     width: 12px;
     height: 14px;
     border-right: 4px solid #00bc8c;
     border-left: 4px solid #00bc8c;
 }
 
-.paused div{
+.question-panel .paused div{
     border-width: 8px 0 8px 12px;
     border-color: transparent transparent transparent #00bc8c;
     border-style: solid;
 }
-.timebar .timebar-bar {
+.question-panel .timebar .timebar-bar {
     height: 4px;
    
 }
 
-.timebar .timebar-circle {
+.question-panel .timebar .timebar-circle {
     background-color: grey;
     width: 16px;
     height: 16px;
@@ -276,7 +276,7 @@ h3 {
     cursor: pointer;
 
 }
-.timebar-time-info {
+.question-panel .timebar-time-info {
     margin-top: 8px;
     font-size: 11px;
     color: #d3d3d3;
@@ -284,29 +284,29 @@ h3 {
     justify-content: space-between;
 }
 
-#volume_control {
+.question-panel #volume_control {
     display:flex;
     justify-content: flex-end;
     /*width: 70px;*/
     margin:-8px 0 0 8px;
 }
-label#rngVolume_label {
+.question-panel label#rngVolume_label {
     font-size: 12px;
     margin-top:-1px;
     line-height: 10px;
 
 }
 
-#rngVolume {
+.question-panel #rngVolume {
     width:70px;
     
 }
 
-input[type=range]::range-progress  {
+.question-panel input[type=range]::range-progress  {
     background-color: #00bc8c;
 }
 
-#volume_img {
+.question-panel #volume_img {
     width:20px;
    
 }
@@ -398,6 +398,7 @@ input[type=range]::range-progress  {
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
+    margin-top: 0;
     width: calc(100% - 240px);
 }
 
@@ -488,8 +489,44 @@ input[type=range]::range-progress  {
 }
 .description-block .bird-description {
     display: flex;
+    margin-top: 0px;
 
 }
+.description-block #volume_control {
+    display:flex;
+    justify-content: flex-end;
+    /*width: 70px;*/
+    margin:-8px 0 0 8px;
+}
+.description-block label#rngVolume_label {
+    font-size: 12px;
+    margin-top:-1px;
+    line-height: 10px;
+
+}
+
+.description-block #rngVolume {
+    width:70px;
+    margin-top: 5px;
+    
+}
+
+.description-block #volume_img2 {
+    width:20px;
+   
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .description-block .bird-description {
+        display: flex;
+        margin-top: 25px;
+    }
+    .description-block #volume_control {
+        display:flex;
+        justify-content: flex-end;
+        margin: 0px 0 0 8px;
+    }
+}    
 
 @media (min-width: 768px) and (max-width: 992px) {
     .description-block .card-body {

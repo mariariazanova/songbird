@@ -51,6 +51,7 @@
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
+    margin-top: 0;
     width: calc(100% - 240px);
 }
 
@@ -141,8 +142,44 @@
 }
 .description-block .bird-description {
     display: flex;
+    margin-top: 0px;
 
 }
+.description-block #volume_control {
+    display:flex;
+    justify-content: flex-end;
+    /*width: 70px;*/
+    margin:-8px 0 0 8px;
+}
+.description-block label#rngVolume_label {
+    font-size: 12px;
+    margin-top:-1px;
+    line-height: 10px;
+
+}
+
+.description-block #rngVolume {
+    width:70px;
+    margin-top: 5px;
+    
+}
+
+.description-block #volume_img2 {
+    width:20px;
+   
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .description-block .bird-description {
+        display: flex;
+        margin-top: 25px;
+    }
+    .description-block #volume_control {
+        display:flex;
+        justify-content: flex-end;
+        margin: 0px 0 0 8px;
+    }
+}    
 
 @media (min-width: 768px) and (max-width: 992px) {
     .description-block .card-body {

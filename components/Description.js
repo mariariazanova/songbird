@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Description.css';
 import Question from './Question';
+import img_volume from '../images/sound1.png';
 
 class Description extends React.Component {
 
@@ -80,6 +81,12 @@ setTime = (time) => {
   return minutesVal + ':' + secondsVal;
 }
 
+soundChange = (EO) => {
+  var audio2 = document.getElementById("audio2");
+  var volume = EO.target.value;
+  audio2.volume = volume;
+}
+
 
     render() {
     
@@ -125,8 +132,17 @@ setTime = (time) => {
                                     <div>{this.setTime(this.state.audioDuration)}</div>
                                 </div>
                             </div>
-                        </div>    
+                        </div> 
+                        <div id="volume_control">
+                            <img src={img_volume} id="volume_img2"/>
+                            <label id="rngVolume_label" >
+                                <input type="range" id="rngVolume" min="0" max="1" 
+                                           step="0.01" defaultValue="0.3" 
+                                           onChange={this.soundChange}/>
+                            </label>
+                        </div>   
                     </div>
+                    
                   </li>  
                 </ul>
               </div>

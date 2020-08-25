@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -261,9 +261,9 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(11);
-} else {
   module.exports = __webpack_require__(12);
+} else {
+  module.exports = __webpack_require__(13);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -285,11 +285,11 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(25)(ReactIs.isElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(26)(ReactIs.isElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(26)();
+  module.exports = __webpack_require__(27)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -528,9 +528,9 @@ module.exports = ReactPropTypesSecret;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(15);
-} else {
   module.exports = __webpack_require__(16);
+} else {
+  module.exports = __webpack_require__(17);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -543,9 +543,9 @@ if (process.env.NODE_ENV === 'production') {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(23);
-} else {
   module.exports = __webpack_require__(24);
+} else {
+  module.exports = __webpack_require__(25);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -571,13 +571,13 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(31);
+__webpack_require__(32);
 
-var _bird = __webpack_require__(32);
+var _bird = __webpack_require__(33);
 
 var _bird2 = _interopRequireDefault(_bird);
 
-var _sound = __webpack_require__(33);
+var _sound = __webpack_require__(9);
 
 var _sound2 = _interopRequireDefault(_sound);
 
@@ -809,6 +809,7 @@ var Question = function (_React$Component) {
                                 _react2.default.createElement(
                                     'div',
                                     { id: 'volume_control' },
+                                    _react2.default.createElement('img', { src: _sound2.default, id: 'volume_img' }),
                                     _react2.default.createElement(
                                         'label',
                                         { id: 'rngVolume_label' },
@@ -835,6 +836,14 @@ exports.default = Question;
 
 /***/ }),
 /* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "9012ea8953bb7596fbe1e0e52f199e7d.png");
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -859,6 +868,10 @@ __webpack_require__(35);
 var _Question = __webpack_require__(8);
 
 var _Question2 = _interopRequireDefault(_Question);
+
+var _sound = __webpack_require__(9);
+
+var _sound2 = _interopRequireDefault(_sound);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -939,6 +952,10 @@ var Description = function (_React$Component) {
             }
 
             return minutesVal + ':' + secondsVal;
+        }, _this.soundChange = function (EO) {
+            var audio2 = document.getElementById("audio2");
+            var volume = EO.target.value;
+            audio2.volume = volume;
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -1031,6 +1048,18 @@ var Description = function (_React$Component) {
                                                     )
                                                 )
                                             )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { id: 'volume_control' },
+                                            _react2.default.createElement('img', { src: _sound2.default, id: 'volume_img2' }),
+                                            _react2.default.createElement(
+                                                'label',
+                                                { id: 'rngVolume_label' },
+                                                _react2.default.createElement('input', { type: 'range', id: 'rngVolume', min: '0', max: '1',
+                                                    step: '0.01', defaultValue: '0.3',
+                                                    onChange: this.soundChange })
+                                            )
                                         )
                                     )
                                 )
@@ -1054,7 +1083,7 @@ Description.propTypes = {};
 exports.default = Description;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1064,13 +1093,13 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(13);
+var _reactDom = __webpack_require__(14);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-__webpack_require__(21);
+__webpack_require__(22);
 
-var _Quiz = __webpack_require__(22);
+var _Quiz = __webpack_require__(23);
 
 var _Quiz2 = _interopRequireDefault(_Quiz);
 
@@ -1079,7 +1108,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_Quiz2.default, null), document.getElementById('container'));
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1111,7 +1140,7 @@ exports.useLayoutEffect=function(a,b){return Z().useLayoutEffect(a,b)};exports.u
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3031,7 +3060,7 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3069,15 +3098,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(14);
+  module.exports = __webpack_require__(15);
 } else {
-  module.exports = __webpack_require__(17);
+  module.exports = __webpack_require__(18);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3376,7 +3405,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!gk(c))throw Er
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3404,7 +3433,7 @@ exports.unstable_shouldYield=function(){var a=exports.unstable_now();V(a);var b=
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4270,7 +4299,7 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4295,7 +4324,7 @@ var React = __webpack_require__(1);
 var _assign = __webpack_require__(3);
 var Scheduler = __webpack_require__(6);
 var checkPropTypes = __webpack_require__(4);
-var tracing = __webpack_require__(18);
+var tracing = __webpack_require__(19);
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED; // Prevent newer renderers from RTE when used with older react package versions.
 // Current owner and dispatcher used to share the same ref,
@@ -29290,22 +29319,22 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(19);
-} else {
   module.exports = __webpack_require__(20);
+} else {
+  module.exports = __webpack_require__(21);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29322,7 +29351,7 @@ var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unst
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29679,13 +29708,13 @@ exports.unstable_wrap = unstable_wrap;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29705,9 +29734,9 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(27);
+__webpack_require__(28);
 
-var _Header = __webpack_require__(28);
+var _Header = __webpack_require__(29);
 
 var _Header2 = _interopRequireDefault(_Header);
 
@@ -29719,7 +29748,7 @@ var _Answers = __webpack_require__(34);
 
 var _Answers2 = _interopRequireDefault(_Answers);
 
-var _Description = __webpack_require__(9);
+var _Description = __webpack_require__(10);
 
 var _Description2 = _interopRequireDefault(_Description);
 
@@ -29926,7 +29955,7 @@ Quiz.propTypes = {};
 exports.default = Quiz;
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29948,7 +29977,7 @@ exports.isValidElementType=function(a){return"string"===typeof a||"function"===t
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30137,7 +30166,7 @@ exports.typeOf = typeOf;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30736,7 +30765,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30807,13 +30836,13 @@ module.exports = function() {
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30833,9 +30862,9 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(29);
+__webpack_require__(30);
 
-var _logo = __webpack_require__(30);
+var _logo = __webpack_require__(31);
 
 var _logo2 = _interopRequireDefault(_logo);
 
@@ -30917,13 +30946,13 @@ Header.propTypes = {};
 exports.default = Header;
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30931,18 +30960,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "4f82cd73f3446ef1af7fa6d3a302ef3a.svg");
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 32 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "06a469380cb09a64d372f773665e7500.jpg");
 
 /***/ }),
 /* 33 */
@@ -30950,7 +30971,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "9012ea8953bb7596fbe1e0e52f199e7d.png");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "06a469380cb09a64d372f773665e7500.jpg");
 
 /***/ }),
 /* 34 */
@@ -30973,7 +30994,7 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Description = __webpack_require__(9);
+var _Description = __webpack_require__(10);
 
 var _Description2 = _interopRequireDefault(_Description);
 
@@ -31241,7 +31262,7 @@ exports.default = Final;
 /* 39 */
 /***/ (function(module, exports) {
 
-module.exports = {"Sound":[["https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC538267-Parus%20major_2020.03.14_10.38_01.mp3","https://www.xeno-canto.org/sounds/uploaded/WBXWQVRTFL/XC559295-200509_0612-Grus%20grus.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC568488-PASDOM_200609_5936_MaraisVernier27.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC569552-PICPIC_200601-075700_ZOOM0020_LR_ChapErdre44.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC467978-CUCCAN_190422_4738_RNN76_Hode.mp3","https://www.xeno-canto.org/sounds/uploaded/DABODLPUPA/XC578084-2020-07-19-Common%20Raven-Pinale%C3%B1o%20Mtns-AZ-SOlmstead.mp3"],["https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC541931-200116_1306_Spinus.spinus.mp3","https://www.xeno-canto.org/sounds/uploaded/RFRTVEHIZX/XC494852-190730_EurasianRook_Bel-Tam_Issyk-Kul_OC.mp3","https://www.xeno-canto.org/sounds/uploaded/SNRCANJSRX/XC567383-Lullula%20arborea%20song%20fly%20Kl%C3%B6ren%20200610%20a.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC516336-STUVUL_170526_2976_Marcevol66.mp3","https://www.xeno-canto.org/sounds/uploaded/PSTCNWXKNE/XC581664-martins.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC579046-GARGLA_200725_6085_Barran65.mp3"],["https://www.xeno-canto.org/sounds/uploaded/OGZZVVEHKU/XC313912-tj%C3%A4der-0137-160423.mp3","https://www.xeno-canto.org/sounds/uploaded/NOJNUVZEHB/XC576189-cdbxc-006.mp3","https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC531100-J%C3%A4rpe_15.mp3","https://www.xeno-canto.org/sounds/uploaded/INCBVJJLBJ/XC559854-Default%20Project.mp3","https://www.xeno-canto.org/sounds/uploaded/RLRHCUIPIY/XC491063-ba%C5%BCant2.mp3","https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC476613-kuropatwy3.mp3"],["https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC568497-VANVAN_200609_5945_RNN76_Vanne5.mp3","https://www.xeno-canto.org/sounds/uploaded/RVVFWWDBAJ/XC519964-Enkelbeckasin-markspel-Lervik%2C%20Hornborgasj%C3%B6n%20Vg-1972-05-23.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC341647-LARARG_160801_2171_LeCroisic.mp3","https://www.xeno-canto.org/sounds/uploaded/SDPCHKOHRH/XC479366-2018-08-03%20Husey%20-%20Borgafjordur%20180803%20Grand%20labbe%20quemandage.mp3","https://www.xeno-canto.org/sounds/uploaded/IXQCADIBFB/XC471936-BECASSE%20DES%20BOIS%20HASNON%2007%2005%2019%20XC.mp3","https://www.xeno-canto.org/sounds/uploaded/SDPCHKOHRH/XC373021-sterne%20naine%20vol%20%287%29.mp3"],["https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC552302-JAREK-MATUSIAK-128%20%282%29%20uszatka.mp3","https://www.xeno-canto.org/sounds/uploaded/XUDFGWMRXG/XC519737-Eagle%20Owl%20Copulation2_110120_110%2B%2B%2B.mp3","https://www.xeno-canto.org/sounds/uploaded/OOECIWCSWV/XC571131-LS_55782%20Kerkuil%20gekrijs%20A.mp3","https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC415320-Slaguggla_12.mp3","https://www.xeno-canto.org/sounds/uploaded/CIKPPWNKWL/XC503131-media.io_Voce080.mp3","https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC574057-JAREK-MATUSIAK-745%20p%C3%B3jd%C5%BAka%20.mp3"],["https://www.xeno-canto.org/sounds/uploaded/JPBSNBUUEF/XC512894-Greylag%20Goose%2C%2023.09.%20Cdc.mp3","https://www.xeno-canto.org/sounds/uploaded/PBXPSXGKLL/XC297972-Mandarinente.mp3","https://www.xeno-canto.org/sounds/uploaded/WBXWQVRTFL/XC289544-150528_0641-Cygnus%20olor.mp3","https://www.xeno-canto.org/sounds/uploaded/KZYUWIRZVH/XC565867-GADWALL_c_f%20Ruby%20L%20NWR%201800m%20061019%201004.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC344389-ANAPLA_161111_2318_Mazerolles44.mp3","https://www.xeno-canto.org/sounds/uploaded/HMNMDPLOSM/XC367386-Roodhalsgansgaslocatie2-5-17.mp3"]],"VariableBirds":[["Синица большая","Журавль серый","Воробей домовый","Сорока","Кукушка","Ворон"],["Чиж","Грач","Жаворонок лесной","Скворец обыкновенный","Ласточка городская","Сойка"],["Глухарь","Перепёлка","Рябчик","Тетерев","Фазан","Куропатка серая"],["Чибис","Бекас","Чайка серебристая","Поморник большой","Вальдшнеп","Крачка малая"],["Сова ушастая","Филин","Сипуха","Неясыть","Сплюшка","Сыч домовый"],["Гусь серый","Мандаринка","Лебедь-шипун","Утка серая","Кряква","Казарка краснозобая"]],"Image":[["https://live.staticflickr.com/65535/50229400198_bb583c8cb2.jpg","https://live.staticflickr.com/65535/50229400263_3d8c443615.jpg","https://live.staticflickr.com/65535/50230264077_ef108d1c17.jpg","https://live.staticflickr.com/65535/50229400213_838f50b4e3.jpg","https://live.staticflickr.com/65535/50230264057_80e3b91c85.jpg","https://live.staticflickr.com/65535/50229400238_9c6063bcd1.jpg"],["https://live.staticflickr.com/65535/50230071306_23192840f6.jpg","https://live.staticflickr.com/65535/50229425878_29201b05cc.jpg","https://live.staticflickr.com/65535/50230289897_5caf70775e.jpg","https://live.staticflickr.com/65535/50230071286_95116b132e.jpg","https://live.staticflickr.com/65535/50230071396_d7a0fbbf0e.jpg","https://live.staticflickr.com/65535/50230071281_a5279c9cab.jpg"],["https://live.staticflickr.com/65535/50230072791_2db020dcec.jpg","https://live.staticflickr.com/65535/50230291212_278bffd8e0.jpg","https://live.staticflickr.com/65535/50229427288_6cae667a3b.jpg","https://live.staticflickr.com/65535/50230072736_2d9cd07e66.jpg","https://live.staticflickr.com/65535/50229427363_b432ae28ba.jpg","https://live.staticflickr.com/65535/50229427273_ce883a7b8e.jpg"],["https://live.staticflickr.com/65535/50230073191_bd37911058.jpg","https://live.staticflickr.com/65535/50229427958_49c1c0c1ab.jpg","https://live.staticflickr.com/65535/50230073266_bbaf9cb809.jpg","https://live.staticflickr.com/65535/50230291782_6dc78e1f54.jpg","https://live.staticflickr.com/65535/50230073271_18a053d47e.jpg","https://live.staticflickr.com/65535/50230073201_8fefd44535.jpg"],["https://live.staticflickr.com/65535/50230073881_7e3baf660a.jpg","https://live.staticflickr.com/65535/50229428673_a7363290af.jpg","https://live.staticflickr.com/65535/50230073841_9789227b41.jpg","https://live.staticflickr.com/65535/50229428708_e8812f5f16.jpg","https://live.staticflickr.com/65535/50230073866_5ba0538af4.jpg","https://live.staticflickr.com/65535/50230292517_bae709e9ab.jpg"],["https://live.staticflickr.com/65535/50229426768_8dd8c640c8.jpg","https://live.staticflickr.com/65535/50229426713_03828db8df.jpg","https://live.staticflickr.com/65535/50229426693_252c52575a.jpg","https://live.staticflickr.com/65535/50230290787_16b22a6d8a.jpg","https://live.staticflickr.com/65535/50230290732_b73e32da9f.jpg","https://live.staticflickr.com/65535/50230290747_324c609c29.jpg"]],"Lat":[["Parus major","Grus grus","Passer domesticus","Pica pica","Cuculus canorus","Corvus corax"],["Spinus (Carduelis) spinus","Corvus frugilegus","Lullula arborea","Sturnus vulgaris","Delichon urbicum","Garrulus glandarius"],["Tetrao urogallus","Coturnix coturnix","Tetrastes (Bonasa) bonasia","Lyrurus (Tetrao) tetrix","Phasianus colchicus","Perdix perdix"],["Vanellus vanellus","Gallinago gallinago","Larus argentatus","Stercorarius (Catharacta) skua","Scolopax rusticola","Sternula albifrons"],["Asio otus","Bubo bubo","Tyto alba","Strix uralensis","Otus scops","Athene noctua"],["Anser anser","Aix galericulata","Cygnus olor"," Mareca (Anas) strepera","Anas platyrhynchos","Branta ruficollis"]],"InfoBirds":[["Синица - грациозная птичка с зеленовато-жёлтой спиной и жёлтым животом, разделённый центральной продольной чёрной полосой. Населяет все типы лесов, а также сады, парки, городские скверы. Песня звонкая, состоит из многократного ритмичного повторения одной и той же двух- или трехсложной фразы «пинь-тю...пинь-тю...пинь-тю...».","Звуки, издаваемые журавлем, похожи на звонкое «кур-лы – кур-лы». Журавли чаще всего поют дуэтом – одна птица начинает запев со слога «кур», а вторая подхватывает «лы». Если птица поёт одна, то она издает только звук «кур».","Воробей - мелкая птица компактного телосложения, несколько округлой формы. Типичный обитатель культурного ландшафта - селится в деревнях и поселках, пригородах и городах, а также в их ближайших окрестностях. Чирикающие звуки, издаваемые этой птицей, хорошо известны; они же, но сливающиеся в короткую трель, и представляют собой песню самца.","Птица размером с галку, с длинным ступенчатым хвостом и контрастным черно-белым оперением. Встречается по речным поймам, зарослям кустарников, лесным опушкам, придорожным лесополосам, а также в населенных пунктах всех типов. Голос - громкое резкое стрекотание, - делает сороку еще более заметной.","Кукушку назвали так из-за особенностей ее песен. Звонкое «ку-ку» не спутать ни с какой другой птицей. Кукушки не строят гнезда, их потомство выращивают другие виды пернатых, которым кукушки подбрасывают свои яйца.","Крупная птица, узнаётся по мощному клюву, чёрному с фиолетовым и пурпурным отливом оперению и силуэту в полёте, с длинными и широкими крыльями и клиновидным (ромбическим) хвостом. Ворон - всеядная птица; его питание заметно меняется по сезонам года."],["Преобладающие тона в оперении чижа — зелёный и жёлтый. Мелкая птица (заметно мельче воробья). Прилет и пролет весной происходит в конце марта – апреле. Гнездится отдельными парами. Полет чижа быстрый, волнообразный. Голос - щебетание во время полета «тий-ли».","Грачи очень умные и сообразительные птицы. С помощью клюва они создают и используют простейшие орудия. У грачей развит рефлекс на звуки трактора. Услышав «тарахтение», они летят на звук – трактор пашет землю, значит, в этом месте много корма.","В отличие от полевого жаворонка, связан с лесными ландшафтами. Однако птицы живут не в лесах, а только на их опушках, обширных гарях и вырубках. Держится на земле, редко присаживаясь на верхушки деревьев и пни. ","Взрослая птица весною черная с зеленым и фиолетовым металлическим блеском; клюв ярко-желтый, ноги оранжево-красные. У зимующих особей нижняя сторона тела покрыта белыми пестринами, исчезающими к весне. В основном гнездятся в населенных пунктах. Песня звучная, включает свисты, скрипы и много подражаний.","Небольшая ласточка компактного телосложения. Силуэт летящей птицы с широкими и заострёнными крыльями напоминает «арбалет». В полете эта птица часто издает чирикающую позывку «чр-чирр», песня же самца звучит как тихое щебетание.","Когда сойка волнуется, хохолок на её голове взъерошивается. Птица старается создать устрашающее зрелище. Сойки умеют имитировать голоса других птиц, животных и звуки, которые создает человек. На зиму они делают большие запасы желудей и орехов."],["Глухарь живет в одиночку или небольшими в 3-9 особей группами, как правило, большими зимой. Населяет главным образом малопосещаемые человеком старые хвойные и смешанные суходольные леса, реже - верховые болота. Зимой при высоте снегового покрова не менее 40 см глухарь зарывается в снег.","Самый мелкий представитель отряда в Беларуси. Перепел легко передвигается по земле, на деревья не садится. Птица ведет исключительно наземный образ жизни, прячась в траве или посевах, поэтому увидеть ее удается очень редко.","Ведет оседлый образ жизни. Малоосторожен. Чаще всего в лесу рябчика удается вспугнуть с земли, реже он слетает с дерева. Рябчик довольно тихая птица. Голос его в виде мелодичного посвиста регулярно можно слышать лишь в брачный период, а позже - при перекличке разлетевшегося при опасности выводка или самца и самки ранним утром и вечером.","В отличие от глухаря избегает старых высокоствольных лесных массивов. Излюбленными биотопами тетерева являются молодые смешанные и лиственные, главным образом березовые, леса, произрастающие по краям болот или среди них. Продолжительность токов 65-66 дней.","Пестроокрашенная птица величиной с домашнюю курицу, с длинным хвостом. Фазан - наземная птица, однако иногда садится и на деревья. Населяет заросли кустарников и высокостебельных сорных трав по долинам рек и в культурном ландшафте. Крик самца похож на пение молодого петушка.","По внешнему виду - птица типично куриного склада. Куропатка большую часть времени проводит на земле среди высокой травы или кустарников. Голос самца в брачный период «киерр-рекм, самки - частое «пит, пит, пит, пит», похожее на трельку."],["Довольно крупный кулик - величиной с голубя. На лету легко узнается по широким, закругленным на концах крыльям, по характерному тоскливому крику «чьи-и-вы». Гнездовым биотопом чибиса являются открытые территории различных типов - луга, поля, верховые болота.","Для облика бекаса характерен длинный клюв и относительно короткие ноги. Типичными местообитаниями являются заболоченные поймы рек, осоковые болота, сырые кочковатые луга. В брачный период можно услышать настоящий голос этой птицы - громкое повторяющееся «та-ке-та-ке-та-ке...» либо «ту-куп, ту-куп», которое не прекращается и ночью.","Населяет крупные озера и обширные верховые болота с большими и малыми озерами, где птицы встречаются в период миграций и летних кочевок. Вблизи гнезд нередко можно слышать характерный крик этой чайки - серию частых резких звуков, учащающихся к концу и напоминающих хохот: «кья...кьяу...кьяу...кьяк..як..як...як».","Самый крупный из поморников, весь темно-коричневый, только снизу и сверху крыльев (которые закруглены больше, чем у других видов) четкое белое пятно (у молодых меньшее). Голос: хриплое «скирр», низкое «ок-ок» или «га-га», при возбуждении - «так-так».","Вальдшнеп – типичный лесной кулик. Ведет преимущественно сумеречно-ночной образ жизни. Весною прилетает во второй половине марта - начале апреля. Спустя несколько дней после прилета можно наблюдать характерные брачные полеты самцов - «тягу», сопровождающиеся характерными звуками «цсси-цсси...», сменяемыми низким хриплым «хорк-хорк...».","Самая маленькая из крачек, легко отличаемая от других не только по величине, но и по желтому клюву и белому лбу. В полете, особенно издали, напоминает ласточку. Голос - негромкое хриплое «кррит». Весною прилетает поздно, в мае. Населяет водоемы с обширными пространствами открытой воды при условии наличия открытых песчаных островов, кос."],["Гнездящийся оседлый вид, кочующий и прилетающий с севера на зимовку вид. Самая обычная из наших сов, средней величины с довольно длинными перьевыми «ушками». Держится довольно скрытно. В конце зимы и весною самец с наступлением темноты часто издает брачный крик - негромкое, ритмически повторяемое неторопливое «хуу».","Самая крупная из сов, с плотным телом и широкими крыльями. Филин активен в сумеречное и ночное время суток. В это время самец нередко издает низкое, но далеко слышное уханье «у-хуу»; у самки крик похожий, но более тихий и хриплый.","Очень редкий оседлый вид. Средней величины сова с сердцевидной формы лицевым диском и относительно длинными, оперенными до когтей ногами. Для гнездования выбирает укромные уголки на чердаках заброшенных (реже жилых) зданий, под крышами хозяйственных построек, на колокольнях церквей, в дуплах старых деревьев","Не многочисленный оседлый вид. Общий тон окраски оперения серый, довольно светлый. Предпочитает переувлажненные участки леса, обычно граничащие со значительными открытыми пространствами  - большими полянами, моховыми болотами, поймами рек. Брачный крик самца - низкое «хуу...ху-хуу», голос самки - «ку-вит».","Очень редкий перелетный вид. Одна из самых мелких сов нашей страны. Голос - монотонный повторяющийся свист «сплю-ю», - определил русское название этой птицы. Селится одиночными парами. Гнездится в дуплах дятлов, в естественных прогнивших полостях стволов, в искусственных гнездовьях.","Гнездящийся, оседлый вид. Глаза и клюв желтые, когти черные. Голос - хрипловатый монотонный свист «пюють...пюють...», - издает только ночью. Обитает преимущественно на освоенных человеком территориях, в том числе и в населенных пунктах."],["Птица характерного гусиного облика, серых и буровато-серых тонов оперения. В полете легко отличим от других гусей по гоготанию, которое очень похоже на голос домашних гусей. Населяет поймы рек, озера и большие пруды с тростниковыми крепями и широкой прибрежной зоной. Очень осторожен, особенно в стаях.","Очень редкий вид в Беларуси. Небольшая утка, окраска взрослого самца в брачном наряде очень яркая и контрастная: лоб и темя зеленые, на голове хохол из красных и зеленых перьев, щеки и подбородок ярко-рыжие. От клюва через глаз к затылку проходит широкая белая полоса, по бокам груди - черные и белые полосы.","Лебедь-шипун хорошо известен благодаря крупным размерам, характерному облику и чисто-белому оперению. Голос шипуна менее звонкий, чем у кликуна, более низкий и слегка дребезжащий. Раздраженная птица издает шипящие звуки. По питанию и образу жизни сходен с кликуном, но более миролюбив и уживчив с другими птицами.","Некрупная утка. Общая окраска серая. Голос самца - короткий свист с хриплым окончанием «лит-крее...», - можно слышать в основном в период спаривания. Голос сходен с голосом кряквы, только слабее. Обязательным условием для обитания является наличие богатой водной растительности, открытых плесов.","Самая обычная в Беларуси утка, является традиционным объектом спортивной охоты. Самая крупная среди наших речных уток. Голос взрослого самца - хриплое «крэ-крэ», а также свистящее «фип»; голос самки - крякающее «куак-куак...» разной силы.","Самый мелкий из гусей (с крякву). Окраска оперения контрастная: лоб, голова и задняя сторона шеи, спина и хвост черные. Между глазом и клювом белое пятно, около уха большое красно-рыжее, окруженное белой каймамой. Гнездится в тундрах Западной Сибири, в Беларуси - редкий случайно залетный вид."]]}
+module.exports = {"Sound":[["https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC538267-Parus%20major_2020.03.14_10.38_01.mp3","https://www.xeno-canto.org/sounds/uploaded/WBXWQVRTFL/XC559295-200509_0612-Grus%20grus.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC568488-PASDOM_200609_5936_MaraisVernier27.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC569552-PICPIC_200601-075700_ZOOM0020_LR_ChapErdre44.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC467978-CUCCAN_190422_4738_RNN76_Hode.mp3","https://www.xeno-canto.org/sounds/uploaded/DABODLPUPA/XC578084-2020-07-19-Common%20Raven-Pinale%C3%B1o%20Mtns-AZ-SOlmstead.mp3"],["https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC541931-200116_1306_Spinus.spinus.mp3","https://www.xeno-canto.org/sounds/uploaded/RFRTVEHIZX/XC494852-190730_EurasianRook_Bel-Tam_Issyk-Kul_OC.mp3","https://www.xeno-canto.org/sounds/uploaded/SNRCANJSRX/XC567383-Lullula%20arborea%20song%20fly%20Kl%C3%B6ren%20200610%20a.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC516336-STUVUL_170526_2976_Marcevol66.mp3","https://www.xeno-canto.org/sounds/uploaded/PSTCNWXKNE/XC581664-martins.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC579046-GARGLA_200725_6085_Barran65.mp3"],["https://www.xeno-canto.org/sounds/uploaded/OGZZVVEHKU/XC313912-tj%C3%A4der-0137-160423.mp3","https://www.xeno-canto.org/sounds/uploaded/NOJNUVZEHB/XC576189-cdbxc-006.mp3","https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC531100-J%C3%A4rpe_15.mp3","https://www.xeno-canto.org/sounds/uploaded/INCBVJJLBJ/XC559854-Default%20Project.mp3","https://www.xeno-canto.org/sounds/uploaded/RLRHCUIPIY/XC491063-ba%C5%BCant2.mp3","https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC476613-kuropatwy3.mp3"],["https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC568497-VANVAN_200609_5945_RNN76_Vanne5.mp3","https://www.xeno-canto.org/sounds/uploaded/RVVFWWDBAJ/XC519964-Enkelbeckasin-markspel-Lervik%2C%20Hornborgasj%C3%B6n%20Vg-1972-05-23.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC341647-LARARG_160801_2171_LeCroisic.mp3","https://www.xeno-canto.org/sounds/uploaded/SDPCHKOHRH/XC479366-2018-08-03%20Husey%20-%20Borgafjordur%20180803%20Grand%20labbe%20quemandage.mp3","https://www.xeno-canto.org/sounds/uploaded/IXQCADIBFB/XC471936-BECASSE%20DES%20BOIS%20HASNON%2007%2005%2019%20XC.mp3","https://www.xeno-canto.org/sounds/uploaded/SDPCHKOHRH/XC373021-sterne%20naine%20vol%20%287%29.mp3"],["https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC552302-JAREK-MATUSIAK-128%20%282%29%20uszatka.mp3","https://www.xeno-canto.org/sounds/uploaded/XUDFGWMRXG/XC519737-Eagle%20Owl%20Copulation2_110120_110%2B%2B%2B.mp3","https://www.xeno-canto.org/sounds/uploaded/OOECIWCSWV/XC571131-LS_55782%20Kerkuil%20gekrijs%20A.mp3","https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC415320-Slaguggla_12.mp3","https://www.xeno-canto.org/sounds/uploaded/CIKPPWNKWL/XC503131-media.io_Voce080.mp3","https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC574057-JAREK-MATUSIAK-745%20p%C3%B3jd%C5%BAka%20.mp3"],["https://www.xeno-canto.org/sounds/uploaded/JPBSNBUUEF/XC512894-Greylag%20Goose%2C%2023.09.%20Cdc.mp3","https://www.xeno-canto.org/sounds/uploaded/PBXPSXGKLL/XC297972-Mandarinente.mp3","https://www.xeno-canto.org/sounds/uploaded/WBXWQVRTFL/XC289544-150528_0641-Cygnus%20olor.mp3","https://www.xeno-canto.org/sounds/uploaded/KZYUWIRZVH/XC565867-GADWALL_c_f%20Ruby%20L%20NWR%201800m%20061019%201004.mp3","https://www.xeno-canto.org/sounds/uploaded/JCPKCBKKAQ/XC344389-ANAPLA_161111_2318_Mazerolles44.mp3","https://www.xeno-canto.org/sounds/uploaded/HMNMDPLOSM/XC367386-Roodhalsgansgaslocatie2-5-17.mp3"]],"VariableBirds":[["Синица большая","Журавль серый","Воробей домовый","Сорока","Кукушка","Ворон"],["Чиж","Грач","Жаворонок лесной","Скворец","Ласточка городская","Сойка"],["Глухарь","Перепёлка","Рябчик","Тетерев","Фазан","Куропатка серая"],["Чибис","Бекас","Чайка серебристая","Поморник большой","Вальдшнеп","Крачка малая"],["Сова ушастая","Филин","Сипуха","Неясыть","Сплюшка","Сыч домовый"],["Гусь серый","Мандаринка","Лебедь-шипун","Утка серая","Кряква","Казарка краснозобая"]],"Image":[["https://live.staticflickr.com/65535/50229400198_bb583c8cb2.jpg","https://live.staticflickr.com/65535/50229400263_3d8c443615.jpg","https://live.staticflickr.com/65535/50230264077_ef108d1c17.jpg","https://live.staticflickr.com/65535/50229400213_838f50b4e3.jpg","https://live.staticflickr.com/65535/50230264057_80e3b91c85.jpg","https://live.staticflickr.com/65535/50229400238_9c6063bcd1.jpg"],["https://live.staticflickr.com/65535/50230071306_23192840f6.jpg","https://live.staticflickr.com/65535/50229425878_29201b05cc.jpg","https://live.staticflickr.com/65535/50230289897_5caf70775e.jpg","https://live.staticflickr.com/65535/50230071286_95116b132e.jpg","https://live.staticflickr.com/65535/50230071396_d7a0fbbf0e.jpg","https://live.staticflickr.com/65535/50230071281_a5279c9cab.jpg"],["https://live.staticflickr.com/65535/50230072791_2db020dcec.jpg","https://live.staticflickr.com/65535/50230291212_278bffd8e0.jpg","https://live.staticflickr.com/65535/50229427288_6cae667a3b.jpg","https://live.staticflickr.com/65535/50230072736_2d9cd07e66.jpg","https://live.staticflickr.com/65535/50229427363_b432ae28ba.jpg","https://live.staticflickr.com/65535/50229427273_ce883a7b8e.jpg"],["https://live.staticflickr.com/65535/50230073191_bd37911058.jpg","https://live.staticflickr.com/65535/50229427958_49c1c0c1ab.jpg","https://live.staticflickr.com/65535/50230073266_bbaf9cb809.jpg","https://live.staticflickr.com/65535/50230291782_6dc78e1f54.jpg","https://live.staticflickr.com/65535/50230073271_18a053d47e.jpg","https://live.staticflickr.com/65535/50230073201_8fefd44535.jpg"],["https://live.staticflickr.com/65535/50230073881_7e3baf660a.jpg","https://live.staticflickr.com/65535/50229428673_a7363290af.jpg","https://live.staticflickr.com/65535/50230073841_9789227b41.jpg","https://live.staticflickr.com/65535/50229428708_e8812f5f16.jpg","https://live.staticflickr.com/65535/50230073866_5ba0538af4.jpg","https://live.staticflickr.com/65535/50230292517_bae709e9ab.jpg"],["https://live.staticflickr.com/65535/50229426768_8dd8c640c8.jpg","https://live.staticflickr.com/65535/50229426713_03828db8df.jpg","https://live.staticflickr.com/65535/50229426693_252c52575a.jpg","https://live.staticflickr.com/65535/50230290787_16b22a6d8a.jpg","https://live.staticflickr.com/65535/50230290732_b73e32da9f.jpg","https://live.staticflickr.com/65535/50230290747_324c609c29.jpg"]],"Lat":[["Parus major","Grus grus","Passer domesticus","Pica pica","Cuculus canorus","Corvus corax"],["Spinus (Carduelis) spinus","Corvus frugilegus","Lullula arborea","Sturnus vulgaris","Delichon urbicum","Garrulus glandarius"],["Tetrao urogallus","Coturnix coturnix","Tetrastes (Bonasa) bonasia","Lyrurus (Tetrao) tetrix","Phasianus colchicus","Perdix perdix"],["Vanellus vanellus","Gallinago gallinago","Larus argentatus","Stercorarius skua","Scolopax rusticola","Sternula albifrons"],["Asio otus","Bubo bubo","Tyto alba","Strix uralensis","Otus scops","Athene noctua"],["Anser anser","Aix galericulata","Cygnus olor"," Mareca (Anas) strepera","Anas platyrhynchos","Branta ruficollis"]],"InfoBirds":[["Синица - грациозная птичка с зеленовато-жёлтой спиной и жёлтым животом, разделённый центральной продольной чёрной полосой. Населяет все типы лесов, а также сады, парки, городские скверы. Песня звонкая, состоит из многократного ритмичного повторения одной и той же двух- или трехсложной фразы «пинь-тю...пинь-тю...пинь-тю...».","Звуки, издаваемые журавлем, похожи на звонкое «кур-лы – кур-лы». Журавли чаще всего поют дуэтом – одна птица начинает запев со слога «кур», а вторая подхватывает «лы». Если птица поёт одна, то она издает только звук «кур».","Воробей - мелкая птица компактного телосложения, несколько округлой формы. Типичный обитатель культурного ландшафта - селится в деревнях и поселках, пригородах и городах, а также в их ближайших окрестностях. Чирикающие звуки, издаваемые этой птицей, хорошо известны; они же, но сливающиеся в короткую трель, и представляют собой песню самца.","Птица размером с галку, с длинным ступенчатым хвостом и контрастным черно-белым оперением. Встречается по речным поймам, зарослям кустарников, лесным опушкам, придорожным лесополосам, а также в населенных пунктах всех типов. Голос - громкое резкое стрекотание, - делает сороку еще более заметной.","Кукушку назвали так из-за особенностей ее песен. Звонкое «ку-ку» не спутать ни с какой другой птицей. Кукушки не строят гнезда, их потомство выращивают другие виды пернатых, которым кукушки подбрасывают свои яйца.","Крупная птица, узнаётся по мощному клюву, чёрному с фиолетовым и пурпурным отливом оперению и силуэту в полёте, с длинными и широкими крыльями и клиновидным (ромбическим) хвостом. Ворон - всеядная птица; его питание заметно меняется по сезонам года."],["Преобладающие тона в оперении чижа — зелёный и жёлтый. Мелкая птица (заметно мельче воробья). Прилет и пролет весной происходит в конце марта – апреле. Гнездится отдельными парами. Полет чижа быстрый, волнообразный. Голос - щебетание во время полета «тий-ли».","Грачи очень умные и сообразительные птицы. С помощью клюва они создают и используют простейшие орудия. У грачей развит рефлекс на звуки трактора. Услышав «тарахтение», они летят на звук – трактор пашет землю, значит, в этом месте много корма.","В отличие от полевого жаворонка, связан с лесными ландшафтами. Однако птицы живут не в лесах, а только на их опушках, обширных гарях и вырубках. Держится на земле, редко присаживаясь на верхушки деревьев и пни. ","Взрослая птица весною черная с зеленым и фиолетовым металлическим блеском; клюв ярко-желтый, ноги оранжево-красные. У зимующих особей нижняя сторона тела покрыта белыми пестринами, исчезающими к весне. В основном гнездятся в населенных пунктах. Песня звучная, включает свисты, скрипы и много подражаний.","Небольшая ласточка компактного телосложения. Силуэт летящей птицы с широкими и заострёнными крыльями напоминает «арбалет». В полете эта птица часто издает чирикающую позывку «чр-чирр», песня же самца звучит как тихое щебетание.","Когда сойка волнуется, хохолок на её голове взъерошивается. Птица старается создать устрашающее зрелище. Сойки умеют имитировать голоса других птиц, животных и звуки, которые создает человек. На зиму они делают большие запасы желудей и орехов."],["Глухарь живет в одиночку или небольшими в 3-9 особей группами, как правило, большими зимой. Населяет главным образом малопосещаемые человеком старые хвойные и смешанные суходольные леса, реже - верховые болота. Зимой при высоте снегового покрова не менее 40 см глухарь зарывается в снег.","Самый мелкий представитель отряда в Беларуси. Перепел легко передвигается по земле, на деревья не садится. Птица ведет исключительно наземный образ жизни, прячась в траве или посевах, поэтому увидеть ее удается очень редко.","Ведет оседлый образ жизни. Малоосторожен. Чаще всего в лесу рябчика удается вспугнуть с земли, реже он слетает с дерева. Рябчик довольно тихая птица. Голос его в виде мелодичного посвиста регулярно можно слышать лишь в брачный период, а позже - при перекличке разлетевшегося при опасности выводка или самца и самки ранним утром и вечером.","В отличие от глухаря избегает старых высокоствольных лесных массивов. Излюбленными биотопами тетерева являются молодые смешанные и лиственные, главным образом березовые, леса, произрастающие по краям болот или среди них. Продолжительность токов 65-66 дней.","Пестроокрашенная птица величиной с домашнюю курицу, с длинным хвостом. Фазан - наземная птица, однако иногда садится и на деревья. Населяет заросли кустарников и высокостебельных сорных трав по долинам рек и в культурном ландшафте. Крик самца похож на пение молодого петушка.","По внешнему виду - птица типично куриного склада. Куропатка большую часть времени проводит на земле среди высокой травы или кустарников. Голос самца в брачный период «киерр-рекм, самки - частое «пит, пит, пит, пит», похожее на трельку."],["Довольно крупный кулик - величиной с голубя. На лету легко узнается по широким, закругленным на концах крыльям, по характерному тоскливому крику «чьи-и-вы». Гнездовым биотопом чибиса являются открытые территории различных типов - луга, поля, верховые болота.","Для облика бекаса характерен длинный клюв и относительно короткие ноги. Типичными местообитаниями являются заболоченные поймы рек, осоковые болота, сырые кочковатые луга. В брачный период можно услышать настоящий голос этой птицы - громкое повторяющееся «та-ке-та-ке-та-ке...» либо «ту-куп, ту-куп», которое не прекращается и ночью.","Населяет крупные озера и обширные верховые болота с большими и малыми озерами, где птицы встречаются в период миграций и летних кочевок. Вблизи гнезд нередко можно слышать характерный крик этой чайки - серию частых резких звуков, учащающихся к концу и напоминающих хохот: «кья...кьяу...кьяу...кьяк..як..як...як».","Самый крупный из поморников, весь темно-коричневый, только снизу и сверху крыльев (которые закруглены больше, чем у других видов) четкое белое пятно (у молодых меньшее). Голос: хриплое «скирр», низкое «ок-ок» или «га-га», при возбуждении - «так-так».","Вальдшнеп – типичный лесной кулик. Ведет преимущественно сумеречно-ночной образ жизни. Весною прилетает во второй половине марта - начале апреля. Спустя несколько дней после прилета можно наблюдать характерные брачные полеты самцов - «тягу», сопровождающиеся характерными звуками «цсси-цсси...», сменяемыми низким хриплым «хорк-хорк...».","Самая маленькая из крачек, легко отличаемая от других не только по величине, но и по желтому клюву и белому лбу. В полете, особенно издали, напоминает ласточку. Голос - негромкое хриплое «кррит». Весною прилетает поздно, в мае. Населяет водоемы с обширными пространствами открытой воды при условии наличия открытых песчаных островов, кос."],["Гнездящийся оседлый вид, кочующий и прилетающий с севера на зимовку вид. Самая обычная из наших сов, средней величины с довольно длинными перьевыми «ушками». Держится довольно скрытно. В конце зимы и весною самец с наступлением темноты часто издает брачный крик - негромкое, ритмически повторяемое неторопливое «хуу».","Самая крупная из сов, с плотным телом и широкими крыльями. Филин активен в сумеречное и ночное время суток. В это время самец нередко издает низкое, но далеко слышное уханье «у-хуу»; у самки крик похожий, но более тихий и хриплый.","Очень редкий оседлый вид. Средней величины сова с сердцевидной формы лицевым диском и относительно длинными, оперенными до когтей ногами. Для гнездования выбирает укромные уголки на чердаках заброшенных (реже жилых) зданий, под крышами хозяйственных построек, на колокольнях церквей, в дуплах старых деревьев","Не многочисленный оседлый вид. Общий тон окраски оперения серый, довольно светлый. Предпочитает переувлажненные участки леса, обычно граничащие со значительными открытыми пространствами  - большими полянами, моховыми болотами, поймами рек. Брачный крик самца - низкое «хуу...ху-хуу», голос самки - «ку-вит».","Очень редкий перелетный вид. Одна из самых мелких сов нашей страны. Голос - монотонный повторяющийся свист «сплю-ю», - определил русское название этой птицы. Селится одиночными парами. Гнездится в дуплах дятлов, в естественных прогнивших полостях стволов, в искусственных гнездовьях.","Гнездящийся, оседлый вид. Глаза и клюв желтые, когти черные. Голос - хрипловатый монотонный свист «пюють...пюють...», - издает только ночью. Обитает преимущественно на освоенных человеком территориях, в том числе и в населенных пунктах."],["Птица характерного гусиного облика, серых и буровато-серых тонов оперения. В полете легко отличим от других гусей по гоготанию, которое очень похоже на голос домашних гусей. Населяет поймы рек, озера и большие пруды с тростниковыми крепями и широкой прибрежной зоной. Очень осторожен, особенно в стаях.","Очень редкий вид в Беларуси. Небольшая утка, окраска взрослого самца в брачном наряде очень яркая и контрастная: лоб и темя зеленые, на голове хохол из красных и зеленых перьев, щеки и подбородок ярко-рыжие. От клюва через глаз к затылку проходит широкая белая полоса, по бокам груди - черные и белые полосы.","Лебедь-шипун хорошо известен благодаря крупным размерам, характерному облику и чисто-белому оперению. Голос шипуна менее звонкий, чем у кликуна, более низкий и слегка дребезжащий. Раздраженная птица издает шипящие звуки. По питанию и образу жизни сходен с кликуном, но более миролюбив и уживчив с другими птицами.","Некрупная утка. Общая окраска серая. Голос самца - короткий свист с хриплым окончанием «лит-крее...», - можно слышать в основном в период спаривания. Голос сходен с голосом кряквы, только слабее. Обязательным условием для обитания является наличие богатой водной растительности, открытых плесов.","Самая обычная в Беларуси утка, является традиционным объектом спортивной охоты. Самая крупная среди наших речных уток. Голос взрослого самца - хриплое «крэ-крэ», а также свистящее «фип»; голос самки - крякающее «куак-куак...» разной силы.","Самый мелкий из гусей (с крякву). Окраска оперения контрастная: лоб, голова и задняя сторона шеи, спина и хвост черные. Между глазом и клювом белое пятно, около уха большое красно-рыжее, окруженное белой каймамой. Гнездится в тундрах Западной Сибири, в Беларуси - редкий случайно залетный вид."]]}
 
 /***/ }),
 /* 40 */
