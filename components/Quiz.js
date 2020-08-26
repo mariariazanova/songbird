@@ -15,6 +15,7 @@ import CorrectAnswer from '../audio/correct_answer.mp3';
 import IncorrectAnswer from '../audio/incorrect_answer2.mp3';
 
 
+
 class Quiz extends React.Component {
     static propTypes = {
     };
@@ -49,6 +50,7 @@ class Quiz extends React.Component {
             count:5,
             newLevel: false,
         });
+        
     };
 
     changeLevel = (EO) => {
@@ -59,7 +61,8 @@ class Quiz extends React.Component {
             descAnswer: undefined,
             rand: Math.floor(Math.random() * (5 - 0 + 1))+0,
 
-        });    
+        });  
+          
     }; 
 
     startAgain = () => {
@@ -68,6 +71,7 @@ class Quiz extends React.Component {
             score: 0,
 
         });
+        
     };
 
     /*returnNextLevel = (EO) => {

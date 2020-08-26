@@ -31033,7 +31033,9 @@ var Answers = function (_React$Component) {
       descAnswer: _this.props.descAnswer,
       guessed: _this.props.guessed,
       countWrong: 0,
-      backgroundColor: ["#444", "#444", "#444", "#444", "#444", "#444"]
+      backgroundColor: ["#444", "#444", "#444", "#444", "#444", "#444"],
+      newLevel: false
+      //wrongAnswersArr: []
     }, _this.componentWillReceiveProps = function (newProps) {
 
       if (newProps.newLevel) {
@@ -31041,10 +31043,10 @@ var Answers = function (_React$Component) {
           guessed: false,
           countWrong: 0,
           backgroundColor: ["#444", "#444", "#444", "#444", "#444", "#444"],
-          newLevel: false
+          newLevel: true
+          //wrongAnswersArr: []
         });
-
-        //this.props.cbReturnNextLevel();
+        wrongAnswersArr = [];
       } else null;
     }, _this.onItemClick = function (EO) {
 
@@ -31056,25 +31058,42 @@ var Answers = function (_React$Component) {
       var newColors2 = [].concat(_toConsumableArray(_this.state.backgroundColor)); // копия массива цветов
       newColors2[EO.target.id] = "red";
 
-      Number(EO.target.id) == _this.props.rand ? ( //EO.target.firstChild.className="li-btn green",
+      //let wrongAnswersArr2=this.state.wrongAnswersArr.slice();
+
+
+      Number(EO.target.id) == _this.props.rand ? wrongAnswersArr.indexOf(EO.target.id) !== -1 ? _this.setState({ countWrong: _this.state.countWrong - 5 }) : (
+
+      //EO.target.firstChild.className="li-btn green",
 
       //(EO.target.firstChild.style.backgroundColor="green",
       document.getElementById("correct_answer").load(), document.getElementById("correct_answer").play(), document.getElementById("audio").pause(), document.getElementById("playback-button").classList.add('paused'), document.getElementById("playback-button").classList.remove('playing'),
       //clearInterval(this.interval),
 
-      wrongAnswersArr = [], _this.setState({ guessed: true, backgroundColor: newColors }), _this.props.cbChooseCorrectAnswer(_this.state.countWrong) //кол-бэк в Header
+
+      wrongAnswersArr.push(EO.target.id), _this.setState({ guessed: true,
+        backgroundColor: newColors
+        //wrongAnswersArr: wrongAnswersArr2.push(EO.target.id)
+
+      }), _this.props.cbChooseCorrectAnswer(_this.state.countWrong) //кол-бэк в Header
       ) : !_this.state.guessed ? ( //(EO.target.firstChild.className="li-btn red" ,
       //(EO.target.firstChild.style.backgroundColor="red",
-      document.getElementById("incorrect_answer").load(), document.getElementById("incorrect_answer").play(), wrongAnswersArr.indexOf(EO.target.id) != -1 ? _this.setState({ backgroundColor: newColors2 }) : (wrongAnswersArr.push(EO.target.id), _this.setState({ backgroundColor: newColors2,
+      document.getElementById("incorrect_answer").load(), document.getElementById("incorrect_answer").play(), wrongAnswersArr.indexOf(EO.target.id) !== -1 ? _this.setState({ backgroundColor: newColors2 }) : (wrongAnswersArr.push(EO.target.id), _this.setState({ backgroundColor: newColors2,
         countWrong: _this.state.countWrong + 1
+        //wrongAnswersArr: wrongAnswersArr2.push(EO.target.id)
       }))) : null;
 
       //console.log(EO.target.id);
       //console.log(wrongAnswersArr);
+
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Answers, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      wrongAnswersArr = [];
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -31114,8 +31133,8 @@ var Answers = function (_React$Component) {
             image: this.props.image,
             rand: this.props.rand,
             info: this.props.info,
-            lat: this.props.lat,
-            newLevel: this.props.newLevel
+            lat: this.props.lat
+            //newLevel={this.props.newLevel}
           })
         )
         //</React.Fragment>             
