@@ -7,6 +7,8 @@ import './Answers.css';
 //let red = [];
 //let green = [];
 
+let wrongAnswersArr = [];
+
 class Answers extends React.Component {
 
     static propTypes = {
@@ -39,6 +41,7 @@ class Answers extends React.Component {
           } else null;
     };
   
+    
   
     onItemClick = (EO) => {
      
@@ -51,7 +54,7 @@ class Answers extends React.Component {
       let newColors2=[...this.state.backgroundColor]; // копия массива цветов
       newColors2[EO.target.id] = "red";
       
-
+      
 
 
       (Number(EO.target.id) == this.props.rand) 
@@ -66,7 +69,7 @@ class Answers extends React.Component {
           document.getElementById("playback-button").classList.remove('playing'),
           //clearInterval(this.interval),
 
-
+          wrongAnswersArr = [],
           this.setState({guessed:true,backgroundColor: newColors }),
           this.props.cbChooseCorrectAnswer(this.state.countWrong)) //кол-бэк в Header
        : (!this.state.guessed)
@@ -74,11 +77,21 @@ class Answers extends React.Component {
           //(EO.target.firstChild.style.backgroundColor="red",
             (document.getElementById("incorrect_answer").load(),
             document.getElementById("incorrect_answer").play(),
-            this.setState({countWrong: this.state.countWrong +1, 
-                           backgroundColor: newColors2}))
+
+            (wrongAnswersArr.indexOf(EO.target.id) != -1) 
+            ? this.setState({backgroundColor: newColors2})
+            : (wrongAnswersArr.push(EO.target.id),
+               this.setState({backgroundColor: newColors2,
+                          countWrong: this.state.countWrong +1, 
+               })
+               )
+               
+            )
          : null
          
-       
+         //console.log(EO.target.id);
+         //console.log(wrongAnswersArr);
+         
     };
 
     
@@ -94,7 +107,7 @@ class Answers extends React.Component {
               {item}
             </li>
         ));
-        console.log("Правильный ответ №" +(this.props.rand+1)); 
+        console.log("Правильный ответ №" +(this.props.rand+1) + " " + this.props.variableBirds[this.props.clrBtn][this.props.rand]); 
      
       return (
           

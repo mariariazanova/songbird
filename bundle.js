@@ -31013,6 +31013,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 //let red = [];
 //let green = [];
 
+var wrongAnswersArr = [];
+
 var Answers = function (_React$Component) {
   _inherits(Answers, _React$Component);
 
@@ -31060,12 +31062,15 @@ var Answers = function (_React$Component) {
       document.getElementById("correct_answer").load(), document.getElementById("correct_answer").play(), document.getElementById("audio").pause(), document.getElementById("playback-button").classList.add('paused'), document.getElementById("playback-button").classList.remove('playing'),
       //clearInterval(this.interval),
 
-
-      _this.setState({ guessed: true, backgroundColor: newColors }), _this.props.cbChooseCorrectAnswer(_this.state.countWrong) //кол-бэк в Header
+      wrongAnswersArr = [], _this.setState({ guessed: true, backgroundColor: newColors }), _this.props.cbChooseCorrectAnswer(_this.state.countWrong) //кол-бэк в Header
       ) : !_this.state.guessed ? ( //(EO.target.firstChild.className="li-btn red" ,
       //(EO.target.firstChild.style.backgroundColor="red",
-      document.getElementById("incorrect_answer").load(), document.getElementById("incorrect_answer").play(), _this.setState({ countWrong: _this.state.countWrong + 1,
-        backgroundColor: newColors2 })) : null;
+      document.getElementById("incorrect_answer").load(), document.getElementById("incorrect_answer").play(), wrongAnswersArr.indexOf(EO.target.id) != -1 ? _this.setState({ backgroundColor: newColors2 }) : (wrongAnswersArr.push(EO.target.id), _this.setState({ backgroundColor: newColors2,
+        countWrong: _this.state.countWrong + 1
+      }))) : null;
+
+      //console.log(EO.target.id);
+      //console.log(wrongAnswersArr);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -31084,7 +31089,7 @@ var Answers = function (_React$Component) {
           item
         );
       });
-      console.log("Правильный ответ №" + (this.props.rand + 1));
+      console.log("Правильный ответ №" + (this.props.rand + 1) + " " + this.props.variableBirds[this.props.clrBtn][this.props.rand]);
 
       return (
 
